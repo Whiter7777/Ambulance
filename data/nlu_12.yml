@@ -1,0 +1,45 @@
+version: "3.1"
+
+nlu:
+- intent: bite # Укус
+  examples: |
+    - Укус
+
+- intent: dog # Собака
+  examples: |
+    - Собака
+
+- intent: snake # Змея
+  examples: |
+    - Змея
+
+- intent: insect # Насекомое
+  examples: |
+    - Насекомое
+
+- intent: unknown # Неизвестно
+  examples: |
+    - Неизвестно
+
+- intent: tick # Клещ
+  examples: |
+    - Клещ
+
+- intent: child # Ребенок до 18
+  examples:
+    - Ребенок
+    - 12 лет
+
+- intent: adult # Взрослый
+  examples:
+    - Взрослый
+    - 20 лет
+
+- intent: unconscious # Без сознания
+  examples: |
+    - Без сознания
+
+- intent: сonscious # В сознании
+  examples: |
+    - В сознаии
+

@@ -1,0 +1,81 @@
+version: "3.1"
+
+nlu:
+- intent: pregnancy # Беременность
+  examples: |
+    - Беременность
+
+- intent: stomach_ache # Боли в животе
+  examples: |
+    -
+
+- intent: nausea # Тошнота, рвота
+  examples: |
+    - Тошнота
+    - Рвота
+
+- intent: headache # Головная боль
+  examples: |
+    - Головная боль
+
+- intent: backache # Боль в спине
+  examples: |
+    - Боль в спине
+
+- intent: unconscious # Нет сознания
+  examples: |
+    - Нет сознания
+
+- intent: labor_pains # Схватки
+  examples: |
+    - Схватки
+
+- intent: gave_birth # Родила
+  examples: |
+    - Родила
+
+- intent: giving_birth_now # Рожает
+  examples: |
+    - Рожает
+
+- intent: child # Ребенок до 18
+  examples:
+    - Ребенок
+    - 12 лет
+
+- intent: adult # Взрослый
+  examples:
+    - Взрослый
+    - 20 лет
+
+- intent: up_to_22_weeks # До 22 недель
+  examples: |
+    - До 22 недель
+
+- intent: more_than_22_weeks # Более 22 недель
+  examples: |
+    - Более 22 недель
+
+- intent: first birth # Первые роды
+  examples: |
+    - Первые роды
+
+- intent: repeated births # Повторные роды
+  examples: |
+    - Повторные роды
+
+- intent: bleeding # Кровотечение: Да
+  examples: |
+    - Есть кровотечение
+
+- intent: no_bleeding # Кровотечение: Нет
+  examples: |
+    - Нет кровотечения
+
+- intent: convulsions # Судороги: Да
+  examples: |
+    - Есть судороги
+
+- intent: no_convulsions # Судороги: Нет
+  examples: |
+    - Нет судорог

@@ -1,0 +1,72 @@
+version: "3.1"
+
+intents:
+  faint
+  bite
+  burn
+  intoxication
+  bleeding
+  hanging
+  drowning
+  electric_shock
+  rape
+  falling_objects
+  falling
+  beat
+  cut_veins
+  gunshot_wound
+  injury
+  foreign_object
+  unknown
+  knife_wound
+  other
+  bruise
+  separation
+  fracture
+  neck
+  breast
+  stomach
+  back
+  hand
+  leg
+  several_areas
+  head
+  ear
+  finger
+  toe
+  jaws
+  spine
+  edge
+  nose
+  throat
+  respiratory_tract
+  rectum
+  urethra
+  vagina
+  child
+  adult
+
+responses:
+
+  utter_reason:
+    - text: "Причина звонка?"
+
+  utter_why_unconscious:
+    - text: "Почему без сознания?"
+
+  utter_cause_of_injury:
+  - text: "Причина травмы"
+
+  utter_localization:
+  - text: "Локализация"
+
+  utter_age:
+  - text: "Возраст пострадавшего?"
+
+
+
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

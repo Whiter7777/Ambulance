@@ -1,0 +1,84 @@
+version: "3.1"
+
+intents:
+  - bite
+  - dog
+  - snake
+  - insect
+  - unknown
+  - tick
+  - child
+  - adult
+  - unconscious
+  - сonscious
+
+responses:
+  utter_reason:
+  - text: "Причина звонка?"
+
+  utter_who_bit:
+  - text: "Укус кем?"
+
+  utter_age:
+  - text: "Возраст пострадавшего?"
+
+  utter_consciousness:
+  - text: "Сознание"
+
+  utter_answer_12_1:
+  - text: "Покусала собака, ребенок, ПБ"
+
+  utter_answer_12_2:
+  - text: "Покусала собака, ребенок, б/созн, ПБ"
+
+  utter_answer_12_3:
+  - text: "Покусала собака, ФБ"
+
+  utter_answer_12_4:
+  - text: "Покусала собака, б/созн, ВБ"
+
+  utter_answer_12_5:
+  - text: "Укус змеи, ребенок, ПБ"
+
+  utter_answer_12_6:
+  - text: "Укус змеи, ребенок, б/созн, ПБ"
+
+  utter_answer_12_7:
+  - text: "Укус змеи, ВБ"
+
+  utter_answer_12_8:
+  - text: "Укус змеи, б/созн, ВБ"
+
+  utter_answer_12_9:
+  - text: "Укусы насекомых, ребенок, ФБ"
+
+  utter_answer_12_10:
+  - text: "Укусы насекомых, ребенок, б/созн, ПБ"
+
+  utter_answer_12_11:
+  - text: "Укусы насекомых, ФБ"
+
+  utter_answer_12_12:
+  - text: "Укусы насекомых, б/созн, ВБ"
+
+  utter_answer_12_13:
+  - text: "Укусы, ребенок, ФБ"
+
+  utter_answer_12_14:
+  - text: "Укусы, ребенок, б/созн, ПБ"
+
+  utter_answer_12_15:
+  - text: "Укусы, ВБ"
+
+  utter_answer_12_16:
+  - text: "Укусы, б/созн, ВБ"
+
+  utter_answer_12_17:
+  - text: "Укус клеща, ребенок, ПБ"
+
+  utter_answer_12_18:
+  - text: "Укус клеща, ВБ"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

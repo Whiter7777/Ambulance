@@ -1,0 +1,68 @@
+version: "3.1"
+
+nlu:
+- intent: intoxication # Отравление
+  examples: |
+    - Отравление
+
+- intent: child # Ребенок до 18
+  examples:
+    - Ребенок
+    - 12 лет
+
+- intent: adult # Взрослый
+  examples:
+    - Взрослый
+    - 20 лет
+
+- intent: many_on # Проставлен признак много (галочка на форме)
+  examples: |
+    - Проставлен признак много
+
+- intent: many_off # Не проставлен признак много (галочка на форме)
+  examples: |
+    - Не проставлен признак много
+
+- intent: unconscious # Без сознания
+  examples: |
+    - Без сознания
+
+- intent: сonscious # В сознании
+  examples: |
+    - В сознании
+
+- intent: medicament # Лекарство
+  examples: |
+    - Лекарство
+
+- intent: organophosphorus # ФОС
+  examples: |
+    - ФОС
+
+- intent: gas # Газ
+  examples: |
+    - Газ
+
+- intent: mushrooms # Грибы
+  examples: |
+    - Грибы
+
+- intent: alcohol # Сурогаты алкоголя
+  examples: |
+    - Сурогаты алкоголя
+
+- intent: drugs # Наркотики
+  examples: |
+    - Наркотики
+
+- intent: products # Продукты
+  examples: |
+    - Продукты
+
+- intent: other # Прочие вещества
+  examples: |
+    - Прочие вещества
+
+- intent: unknown # Неизвестно
+  examples: |
+    - Неизвестно

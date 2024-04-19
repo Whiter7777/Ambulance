@@ -1,0 +1,124 @@
+version: "3.1"
+
+cases:
+
+  case_reason:
+    - intent: bite # Укус
+    - action: utter_who_bit # "Укус кем?"
+    - next:
+        - case_dog:
+        - case_snake:
+        - case_insect:
+        - case_unknown:
+        - case_tick:
+
+  case_dog:
+    - intent: dog # Собака
+    - action: utter_age # Возраст пострадавшего?
+    - next:
+        - case:
+            - intent: child # Ребенок до 18
+            - action: utter_consciousness # В сознании?
+            - next:
+                - case:
+                    - intent: сonscious # В сознании
+                    - action: utter_answer_12_1 # Покусала собака, ребенок, ПБ
+                - case:
+                    - intent: unconscious # Без сознания
+                    - action: utter_answer_12_2 # Покусала собака, ребенок, б/созн, ПБ
+        - case:
+            - intent: adult # Взрослый
+            - action: utter_consciousness # В сознании?
+            - next:
+                - case:
+                    - intent: сonscious # В сознаии
+                    - action: utter_answer_12_3 # Покусала собака, ФБ
+                - case:
+                    - intent: unconscious # Без сознания
+                    - action: utter_answer_12_4 # Покусала собака, б/созн, ВБ
+
+  case_snake:
+    - intent: snake # Змея
+    - action: utter_age # Возраст пострадавшего?
+    - next:
+        - case:
+            - intent: child # Ребенок до 18
+            - action: utter_consciousness # В сознании?
+            - next:
+                - case:
+                    - intent: сonscious # В сознании
+                    - action: utter_answer_12_5 # Укус змеи, ребенок, ПБ
+                - case:
+                    - intent: unconscious # Без сознания
+                    - action: utter_answer_12_6 # Укус змеи, ребенок, б/созн, ПБ
+        - case:
+            - intent: adult # Взрослый
+            - action: utter_consciousness # В сознании?
+            - next:
+                - case:
+                    - intent: сonscious # В сознаии
+                    - action: utter_answer_12_7 # Укус змеи, ВБ
+                - case:
+                    - intent: unconscious # Без сознания
+                    - action: utter_answer_12_8 # Укус змеи, б/созн, ВБ
+
+  case_insect:
+    - intent: insect # Насекомое
+    - action: utter_age # Возраст пострадавшего?
+    - next:
+        - case:
+            - intent: child # Ребенок до 18
+            - action: utter_consciousness # В сознании?
+            - next:
+                - case:
+                    - intent: сonscious # В сознании
+                    - action: utter_answer_12_9 # Укусы насекомых, ребенок, ФБ
+                - case:
+                    - intent: unconscious # Без сознания
+                    - action: utter_answer_12_10 # Укусы насекомых, ребенок, б/созн, ПБ
+        - case:
+            - intent: adult # Взрослый
+            - action: utter_consciousness # В сознании?
+            - next:
+                - case:
+                    - intent: сonscious # В сознаии
+                    - action: utter_answer_12_11 # Укусы насекомых, ФБ
+                - case:
+                    - intent: unconscious # Без сознания
+                    - action: utter_answer_12_12 # Укусы насекомых, б/созн, ВБ
+
+  case_unknown:
+    - intent: unknown # Неизвестно
+    - action: utter_age # Возраст пострадавшего?
+    - next:
+        - case:
+            - intent: child # Ребенок до 18
+            - action: utter_consciousness # В сознании?
+            - next:
+                - case:
+                    - intent: сonscious # В сознании
+                    - action: utter_answer_12_13 # Укусы, ребенок, ФБ
+                - case:
+                    - intent: unconscious # Без сознания
+                    - action: utter_answer_12_14 # Укусы, ребенок, б/созн, ПБ
+        - case:
+            - intent: adult # Взрослый
+            - action: utter_consciousness # В сознании?
+            - next:
+                - case:
+                    - intent: сonscious # В сознаии
+                    - action: utter_answer_12_16 # Укусы, ВБ
+                - case:
+                    - intent: unconscious # Без сознания
+                    - action: utter_answer_12_16 # Укусы, б/созн, ВБ
+
+  case_tick:
+    - intent: tick # Клещ
+    - action: utter_age # Возраст пострадавшего?
+    - next:
+        - case:
+            - intent: child # Ребенок до 18
+            - action: utter_answer_12_17 # Укус клеща, ребенок, ПБ
+        - case:
+            - intent: adult # Взрослый
+            - action: utter_answer_12_18 # Укус клеща, ВБ

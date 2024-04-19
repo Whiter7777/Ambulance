@@ -1,0 +1,53 @@
+version: "3.1"
+
+nlu:
+- intent: bomb_threat # Угроза взрыва
+  examples: |
+    - Угроза взрыва
+
+- intent: explosive_device # Подозрение на взрывное устройство
+  examples: |
+    - Подозрение на взрывное устройство
+
+- intent: explosion # Взрыв
+  examples: |
+    - Взрыв
+
+- intent: firefight # Перестрелка
+  examples: |
+    - Перестрелка
+
+- intent: murder # Убийство
+  examples: |
+    - Убийство
+
+- intent: fighting # Драка
+  examples: |
+    - Драка
+
+- intent: child # Ребенок до 18
+  examples:
+    - Ребенок
+    - 12 лет
+
+- intent: adult # Взрослый
+  examples:
+    - Взрослый
+    - 20 лет
+
+- intent: conflict_on # Конфликт продолжается: Да
+  examples: |
+    - Конфликт продолжается
+
+- intent: conflict_off # Конфликт продолжается: Нет
+  examples: |
+    - Конфликт закончился
+
+- intent: one_victim # Несколько пострадавших: Нет
+  examples:
+    - Один пострадавший
+
+- intent: several_victims # Несколько пострадавших: Да
+  examples:
+    - Несколько пострадавших
+    - Много жертв

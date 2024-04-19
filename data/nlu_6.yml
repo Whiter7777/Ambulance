@@ -1,0 +1,92 @@
+version: "3.1"
+
+nlu:
+- intent: burn # Ожог
+  examples: |
+    - Ожог
+
+- intent: child # Ребенок до 18
+  examples:
+    - Ребенок
+    - 12 лет
+
+- intent: adult # Взрослый
+  examples:
+    - Взрослый
+    - 20 лет
+
+- intent: many_on # Проставлен признак много (галочка на форме)
+  examples: |
+    - Проставлен признак много
+
+- intent: many_off # Не проставлен признак много (галочка на форме)
+  examples: |
+    - Не проставлен признак много
+
+- intent: flame # Пламенем
+  examples: |
+    - Пламенем
+
+- intent: boiling_water # Кипятком
+  examples: |
+    - Кипятком
+
+- intent: chemical_agent # Химическим веществом
+  examples: |
+    - Химическим веществом
+
+- intent: plant # Растением
+  examples: |
+    - Растением
+
+- intent: electrical_burn # Электроожог
+  examples: |
+    - Электроожог
+
+- intent: sun # Солнцем
+  examples: |
+    - Солнцем
+
+- intent: head #Голова
+  examples: |
+    - Голова
+
+- intent: neck # Шея
+  examples: |
+    - Шея
+
+- intent: breast # Грудь
+  examples: |
+    - Грудь
+
+- intent: stomach # Живот
+  examples: |
+    - Живот
+
+- intent: back # Спина
+  examples: |
+    - Спина
+
+- intent: hand # Рука
+  examples: |
+    - Рука
+
+- intent: leg # Нога
+  examples: |
+    - Нога
+
+- intent: several_areas #Несколько областей
+  examples: |
+    - Несколько областей
+
+- intent: respiratory_tract # Верхние дыхательные пути
+  examples: |
+    - Верхние дыхательные пути
+
+- intent: unconscious # Без сознания
+  examples: |
+    - Без сознания
+
+- intent: сonscious # В сознании
+  examples: |
+    - В сознании

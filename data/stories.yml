@@ -1,0 +1,261 @@
+version: "3.1"
+
+stories:
+
+- story: traffic_accident_1
+  steps:
+  - intent: traffic_accident # ДТП
+  - action: utter_location # Где случилось
+  - intent: flat # Квартира
+  - action: utter_age # Возраст
+  - intent: child # Ребенок до 18
+  - action: utter_number_of # Несколько пострадавших
+  - intent: one_victim # Несколько пострадавших: Нет
+  - action: utter_answer_1 # После АВТО ребенок, ПБ
+
+- story:  traffic_accident_2
+  steps:
+  - intent: traffic_accident # ДТП
+  - action: utter_location # Где случилось
+  - intent: flat # Квартира
+  - action: utter_age # Возраст
+  - intent: child # Ребенок до 18
+  - action: utter_number_of # Несколько пострадавших
+  - intent: several_victims # Несколько пострадавших: Да
+  - action: utter_answer_2 # Массовый АВТОслучай, есть дети, ВБ
+
+- story:  traffic_accident_3
+  steps:
+  - intent: traffic_accident # ДТП
+  - action: utter_location # Где случилось
+  - intent: flat # Квартира
+  - action: utter_age # Возраст
+  - intent: adult # Взрослый
+  - action: utter_number_of # Несколько пострадавших
+  - intent: one_victim # Несколько пострадавших: Нет
+  - action: utter_answer_3 # После АВТО, ВБ
+
+- story:  traffic_accident_4
+  steps:
+  - intent: traffic_accident # ДТП
+  - action: utter_location # Где случилось
+  - intent: flat # Квартира
+  - action: utter_age # Возраст
+  - intent: adult # Взрослый
+  - action: utter_number_of # Несколько пострадавших
+  - intent: several_victims # Несколько пострадавших: Да
+  - action: utter_answer_4 # Массовый АВТОслучай, ВБ
+
+- story: traffic_accident_5
+  steps:
+  - intent: traffic_accident # ДТП
+  - action: utter_location # Где случилось
+  - intent: location # Ул., общ. Место\Учр. предпр. , ор
+  - action: utter_conditions # Обстоятельства ДТП
+  - intent: pedestrian_hit # Сбит пешеход
+  - action: utter_age # Возраст
+  - intent: child # Ребенок до 18
+  - action: utter_number_of # Несколько пострадавших
+  - intent: one_victim # Несколько пострадавших: Нет
+  - action: utter_answer_5 # АВТО ребенок, ПБ
+
+- story: traffic_accident_6
+  steps:
+  - intent: traffic_accident # ДТП
+  - action: utter_location # Где случилось
+  - intent: location # Ул., общ. Место\Учр. предпр. , ор
+  - action: utter_conditions # Обстоятельства ДТП
+  - intent: pedestrian_hit # Сбит пешеход
+  - action: utter_age # Возраст
+  - intent: child # Ребенок до 18
+  - action: utter_number_of # Несколько пострадавших
+  - intent: several_victims # Несколько пострадавших: Да
+  - action: utter_answer_6 # Массовый АВТОслучай, есть дети, РХБ, ПБ
+
+- story: traffic_accident_7
+  steps:
+  - intent: traffic_accident # ДТП
+  - action: utter_location # Где случилось
+  - intent: location # Ул., общ. Место\Учр. предпр. , ор
+  - action: utter_conditions # Обстоятельства ДТП
+  - intent: car_collision # Столкновение автомашин
+  - action: utter_age # Возраст
+  - intent: child # Ребенок до 18
+  - action: utter_number_of # Несколько пострадавших
+  - intent: one_victim # Несколько пострадавших: Нет
+  - action: utter_answer_7 # Автоавария, ребенок, ПБ
+
+- story: traffic_accident_8
+  steps:
+  - intent: traffic_accident # ДТП
+  - action: utter_location # Где случилось
+  - intent: location # Ул., общ. Место\Учр. предпр. , ор
+  - action: utter_conditions # Обстоятельства ДТП
+  - intent: car_collision # Столкновение автомашин
+  - action: utter_age # Возраст
+  - intent: child # Ребенок до 18
+  - action: utter_number_of # Несколько пострадавших
+  - intent: several_victims # Несколько пострадавших: Да
+  - action: utter_answer_6 # Массовый АВТОслучай, есть дети, РХБ, ПБ
+
+- story: traffic_accident_9
+  steps:
+  - intent: traffic_accident # ДТП
+  - action: utter_location # Где случилось
+  - intent: location # Ул., общ. Место\Учр. предпр. , ор
+  - action: utter_conditions # Обстоятельства ДТП
+  - intent: transport_collision # Столкновение обществ. транс-та
+  - action: utter_age # Возраст
+  - intent: child # Ребенок до 18
+  - action: utter_number_of # Несколько пострадавших
+  - intent: one_victim # Несколько пострадавших: Нет
+  - action: utter_answer_8 # Авто общественного транспорта, есть дети, ВБ, РХБ
+
+- story: traffic_accident_10
+  steps:
+  - intent: traffic_accident # ДТП
+  - action: utter_location # Где случилось
+  - intent: location # Ул., общ. Место\Учр. предпр. , ор
+  - action: utter_conditions # Обстоятельства ДТП
+  - intent: transport_collision # Столкновение обществ. транс-та
+  - action: utter_age # Возраст
+  - intent: child # Ребенок до 18
+  - action: utter_number_of # Несколько пострадавших
+  - intent: several_victims # Несколько пострадавших: Да
+  - action: utter_answer_6 # Массовый АВТОслучай, есть дети, РХБ, ПБ
+
+- story: traffic_accident_11
+  steps:
+  - intent: traffic_accident # ДТП
+  - action: utter_location # Где случилось
+  - intent: location # Ул., общ. Место\Учр. предпр. , ор
+  - action: utter_conditions # Обстоятельства ДТП
+  - intent: rail_collision # Рельсовая травма
+  - action: utter_age # Возраст
+  - intent: child # Ребенок до 18
+  - action: utter_number_of # Несколько пострадавших
+  - intent: one_victim # Несколько пострадавших: Нет
+  - action: utter_answer_9 # Рельсовая травма ребенок, ПРБ
+
+- story: traffic_accident_12
+  steps:
+  - intent: traffic_accident # ДТП
+  - action: utter_location # Где случилось
+  - intent: location # Ул., общ. Место\Учр. предпр. , ор
+  - action: utter_conditions # Обстоятельства ДТП
+  - intent: rail_collision # Рельсовая травма
+  - action: utter_age # Возраст
+  - intent: child # Ребенок до 18
+  - action: utter_number_of # Несколько пострадавших
+  - intent: several_victims # Несколько пострадавших: Да
+  - action: utter_answer_10 # Рельсовая травма массовое, есть дети, РХБ, ВБ
+
+- story: traffic_accident_13
+  steps:
+  - intent: traffic_accident # ДТП
+  - action: utter_location # Где случилось
+  - intent: location # Ул., общ. Место\Учр. предпр. , ор
+  - action: utter_conditions # Обстоятельства ДТП
+  - intent: pedestrian_hit # Сбит пешеход
+  - action: utter_age # Возраст
+  - intent: adult # Взрослый
+  - action: utter_number_of # Несколько пострадавших
+  - intent: one_victim # Несколько пострадавших: Нет
+  - action: utter_answer_11 # АВТО пешеход, ВБ
+
+- story: traffic_accident_14
+  steps:
+  - intent: traffic_accident # ДТП
+  - action: utter_location # Где случилось
+  - intent: location # Ул., общ. Место\Учр. предпр. , ор
+  - action: utter_conditions # Обстоятельства ДТП
+  - intent: pedestrian_hit # Сбит пешеход
+  - action: utter_age # Возраст
+  - intent: adult # Взрослый
+  - action: utter_number_of # Несколько пострадавших
+  - intent: several_victims # Несколько пострадавших: Да
+  - action: utter_answer_12 # Массовый АВТОслучай, РХБ, ВБ
+
+- story: traffic_accident_15
+  steps:
+  - intent: traffic_accident # ДТП
+  - action: utter_location # Где случилось
+  - intent: location # Ул., общ. Место\Учр. предпр. , ор
+  - action: utter_conditions # Обстоятельства ДТП
+  - intent: car_collision # Столкновение автомашин
+  - action: utter_age # Возраст
+  - intent: adult # Взрослый
+  - action: utter_number_of # Несколько пострадавших
+  - intent: one_victim # Несколько пострадавших: Нет
+  - action: utter_answer_13 # АВТОавария, ВБ
+
+- story: traffic_accident_16
+  steps:
+  - intent: traffic_accident # ДТП
+  - action: utter_location # Где случилось
+  - intent: location # Ул., общ. Место\Учр. предпр. , ор
+  - action: utter_conditions # Обстоятельства ДТП
+  - intent: car_collision # Столкновение автомашин
+  - action: utter_age # Возраст
+  - intent: adult # Взрослый
+  - action: utter_number_of # Несколько пострадавших
+  - intent: several_victims # Несколько пострадавших: Да
+  - action: utter_answer_12 # Массовый АВТОслучай, РХБ, ВБ
+
+- story: traffic_accident_17
+  steps:
+  - intent: traffic_accident # ДТП
+  - action: utter_location # Где случилось
+  - intent: location # Ул., общ. Место\Учр. предпр. , ор
+  - action: utter_conditions # Обстоятельства ДТП
+  - intent: transport_collision # Столкновение обществ. транс-та
+  - action: utter_age # Возраст
+  - intent: adult # Взрослый
+  - action: utter_number_of # Несколько пострадавших
+  - intent: one_victim # Несколько пострадавших: Нет
+  - action: utter_answer_14 # АВТО общественного транспорта, ВБ, РХБ
+
+- story: traffic_accident_18
+  steps:
+  - intent: traffic_accident # ДТП
+  - action: utter_location # Где случилось
+  - intent: location # Ул., общ. Место\Учр. предпр. , ор
+  - action: utter_conditions # Обстоятельства ДТП
+  - intent: transport_collision # Столкновение обществ. транс-та
+  - action: utter_age # Возраст
+  - intent: adult # Взрослый
+  - action: utter_number_of # Несколько пострадавших
+  - intent: several_victims # Несколько пострадавших: Да
+  - action: utter_answer_12 # Массовый АВТОслучай, РХБ, ВБ
+
+- story: traffic_accident_19
+  steps:
+  - intent: traffic_accident # ДТП
+  - action: utter_location # Где случилось
+  - intent: location # Ул., общ. Место\Учр. предпр. , ор
+  - action: utter_conditions # Обстоятельства ДТП
+  - intent: rail_collision # Рельсовая травма
+  - action: utter_age # Возраст
+  - intent: adult # Взрослый
+  - action: utter_number_of # Несколько пострадавших
+  - intent: one_victim # Несколько пострадавших: Нет
+  - action: utter_answer_15 # Рельсовая травма, РХБ
+
+- story: traffic_accident_20
+  steps:
+  - intent: traffic_accident # ДТП
+  - action: utter_location # Где случилось
+  - intent: location # Ул., общ. Место\Учр. предпр. , ор
+  - action: utter_conditions # Обстоятельства ДТП
+  - intent: rail_collision # Рельсовая травма
+  - action: utter_age # Возраст
+  - intent: adult # Взрослый
+  - action: utter_number_of # Несколько пострадавших
+  - intent: several_victims # Несколько пострадавших: Да
+  - action: utter_answer_16 # Рельсовая травма, массовое, РХБ, ВБ
+
+
+
+
+
+

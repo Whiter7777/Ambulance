@@ -1,0 +1,52 @@
+version: "3.1"
+
+nlu:
+- intent: traffic_accident # ДТП
+  examples: |
+    - ДТП
+
+- intent: pedestrian_hit # Сбит пешеход
+  examples: |
+    - Сбит пешеход
+
+- intent: car_collision # Столкновение автомашин
+  examples: |
+    - Столкновевние автомашин
+
+- intent: transport_collision # Столкновение обществ. транс-та
+  examples: |
+    - Столкновение общественного транспорта
+
+- intent: rail_collision # Рельсовая травма
+  examples: |
+    - Рельсовая травма
+
+- intent: location # Ул., общ. Место\Учр. предпр. , ор
+  examples: |
+    - Набережная реки Карповки
+    - Перекресток Науки и Гражданского
+
+- intent: flat # Квартира
+  examples: |
+    - Квартира
+    - Дома
+
+- intent: child # Ребенок до 18
+  examples:
+    - Ребенок
+    - 12 лет
+
+- intent: adult # Взрослый
+  examples:
+    - Взрослый
+    - 20 лет
+
+- intent: one_victim # Несколько пострадавших: Нет
+  examples:
+    - Один пострадавший
+
+- intent: several_victims # Несколько пострадавших: Да
+  examples:
+    - Несколько пострадавших
+    - Много жертв
+
