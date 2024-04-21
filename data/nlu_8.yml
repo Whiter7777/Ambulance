@@ -1,0 +1,231 @@
+version: "3.1"
+
+nlu:
+
+- intent: call # Поступил звонок
+  examples: |
+    - Поступил звонок
+
+- intent: stomach_ache # Боли в животе
+  examples: |
+    - Боли в животе
+
+- intent: backache # Боль в спине
+  examples: |
+    - Боль в спине
+
+- intent: headache # Головная боль
+  examples: |
+    - Головная боль
+
+- intent: nausea # Тошнота, рвота
+  examples: |
+    - Тошнота
+    - Рвота
+
+- intent: dies # Умирает
+  examples: |
+    - Умирает
+
+- intent: unconscious # Без сознания
+  examples: |
+    - Без сознания
+
+- intent: accident # Несчастный случай
+  examples: |
+    - Несчастный случай
+
+- intent: turned_blue # Посинел
+  examples: |
+    - Посинел
+
+- intent: convulsions # Судороги
+  examples: |
+    - Судороги
+
+- intent: choking # Задыхается
+  examples: |
+    - Задыхается
+
+- intent: temperature # Температура
+  examples: |
+    - Температура
+
+- intent: diarrhea # Рвота, понос
+  examples: |
+    - Понос
+
+- intent: screams # Кричит, плачет
+  examples: |
+    - Кричит
+    - Плачет
+
+- intent: rash # Сыпь
+  examples: |
+    - Сыпь
+
+- intent: other # Прочее
+  examples: |
+    - Прочее
+
+- intent: paralyzed # Парализовало
+  examples: |
+    - Парализовало
+
+- intent: suicidal_statements # Суицидальные высказывания (алк.)
+  examples: |
+    - Суицидальные высказывания
+
+- intent: heartache # Боли в сердце
+  examples: |
+    - Боли в сердце
+
+- intent: high_pressure # Высокое давление
+  examples: |
+    - Высокое давление
+
+- intent: heat # Высокая температура
+  examples: |
+    - Высокая температура
+    - Жар
+
+- intent: edema # Отек
+  examples: |
+    - Отек
+
+- intent: earache_child # Боль в ухе (ребенок)
+  examples: |
+    - Боль в ухе у ребенка
+
+- intent: screams_child # Кричит (ребенок)
+  examples: |
+    - Кричит ребенок
+
+- intent: badly # Плохо
+  examples: |
+    - Плохо
+
+- intent: suddenly # Внезапно
+  examples: |
+    - Внезапно
+
+- intent: pregnancy_on # Беременность есть
+  examples: |
+    - Беременность есть
+
+- intent: pregnancy_off # Беременности нет
+  examples: |
+    - Беременности нет
+
+- intent: location # Ул., общ. Место\Учр. предпр. , ор
+  examples: |
+    - Набережная реки Карповки
+    - Перекресток Науки и Гражданского
+
+- intent: flat # Квартира
+  examples: |
+    - Квартира
+    - Дома
+
+- intent: child # Ребенок до 18
+  examples:
+    - Ребенок
+    - 12 лет
+
+- intent: adult # Взрослый
+  examples:
+    - Взрослый
+    - 20 лет
+
+- intent: child_up_to_three # Ребенок до 3-х месяцев
+  examples:
+    - Ребенок до 3-х месяцев
+
+- intent: child_up_to_year # Ребенок от 3-х месяцев до 1 года
+  examples:
+    - Ребенок от 3-х месяцев до 1 года
+
+- intent: up_to_22_weeks # До 22 недель
+  examples: |
+    - До 22 недель
+
+- intent: more_than_22_weeks # Более 22 недель
+  examples: |
+    - Более 22 недель
+
+- intent: unconscious # Без сознания
+  examples: |
+    - Без сознания
+
+- intent: сonscious # В сознании
+  examples: |
+    - В сознании
+
+- intent: breath_on # Дыхание есть
+  examples: |
+    - Дыхание есть
+
+- intent: breath_off # Дыхания нет
+  examples: |
+    - Дыхания нет
+
+- intent: no_injury # Травмы не было
+  examples: |
+    - Травмы не было
+    - Неизвестно
+
+- intent: injury # Травма была
+  examples: |
+    - Травма была
+
+- intent: bleeding # Кровотечение: Да
+  examples: |
+    - Есть кровотечение
+
+- intent: no_bleeding # Кровотечение: Нет
+  examples: |
+    - Нет кровотечения
+
+- intent: convulsions # Судороги: Да
+  examples: |
+    - Есть судороги
+
+- intent: no_convulsions # Судороги: Нет
+  examples: |
+    - Нет судорог
+
+- intent: allergy # Аллергия
+  examples: |
+    - Аллергия
+
+- intent: asthma # Астма
+  examples: |
+    - Астма
+
+- intent: hypertonic # Гипертоническая болезнь
+  examples: |
+    - Гипертоническая болезнь
+
+- intent: stenocardia # ОИМ, Стенокардия
+  examples: |
+    - Стенокардия
+
+- intent: cerebrovascular  # После ОНМК
+  examples: |
+    - После остного нарушения мозгового кровообращения
+
+- intent: diabetes # Сахарный диабет
+  examples: |
+    - Сахарный диабет
+
+- intent: epilepsy # Эпилепсия
+  examples: |
+    - Эпилепсия
+
+- intent: unknown # Нет данных
+  examples: |
+    - Нет данных
+
+- intent: oncology # Онкология
+  examples: |
+    - Онкология

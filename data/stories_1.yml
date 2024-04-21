@@ -1,202 +1,62 @@
 version: "3.1"
 
+stories:
+
 - story: traffic_accident_1
-  steps:
+- steps:
+  - intent: call # Поступил звонок
+  - action: utter_reason # Причина звонка
   - intent: traffic_accident # ДТП
   - action: utter_location # Где случилось
   - intent: flat # Квартира
   - action: utter_age # Возраст
-  - intent: child # Ребенок до 18
-  - action: utter_number_of # Несколько пострадавших
-  - intent: one_victim # Несколько пострадавших: Нет
-  - action: utter_answer_1 # После АВТО ребенок, ПБ
-  - checkpoint:
+  - checkpoint: age_checkpoint
+
+- story: traffic_accident_2
+- steps:
+  - intent: call # Поступил звонок
+  - action: utter_reason # Причина звонка
+  - intent: traffic_accident # ДТП
+  - action: utter_location # Где случилось
+  - intent: location # Ул., общ. Место\Учр. предпр. , ор
+  - action: utter_conditions # Обстоятельства ДТП
+  - or:
+      - intent: pedestrian_hit # Сбит пешеход
+      - intent: car_collision # Столкновение автомашин
+      - intent: transport_collision # Столкновение обществ. транс-та
+      - intent: rail_collision # Рельсовая травма
+  - action: utter_age # Возраст
+  - checkpoint: age_checkpoint
+
+- story: traffic_accident_3
+- steps:
+  - intent: call # Поступил звонок
+  - action: utter_reason # Причина звонка
+  - or:
+      - intent: pedestrian_hit # Сбит пешеход
+      - intent: car_collision # Столкновение автомашин
+      - intent: transport_collision # Столкновение обществ. транс-та
+      - intent: rail_collision # Рельсовая травма
+  - action: utter_location # Где случилось
+  - intent: location # Ул., общ. Место\Учр. предпр. , ор
+  - action: utter_age # Возраст
+  - checkpoint: age_checkpoint
+
+- story : traffic_accident_continuation
+- steps:
+  - checkpoint: age_checkpoint
+  - or:
+      - intent: child # Ребенок до 18
+      - intent: adult # Взрослый
+  - action: utter_number_of # Несколько пострадавших?
+  - or:
+      - intent: one_victim # Несколько пострадавших: Нет
+      - intent: several_victims # Несколько пострадавших: Да
+  - action: ???
 
 
 
 
-
-
-#cases:
-#
-#  case_reason:
-#    - intent: traffic_accident # ДТП
-#    - action: utter_location # Где случилось
-#    - next:
-#        - case_flat:
-#        - case_location:
-#
-## БЛОК 1 - ДТП + Квартира
-#
-#  case_flat:
-#    - intent: flat # Квартира
-#    - action: utter_age # Возраст
-#    - next:
-#        - case_child:
-#        - case_adult:
-#
-#  case_child:
-#    - intent: child # Ребенок до 18
-#    - action: utter_number_of # Несколько пострадавших?
-#    - next:
-#        - case:
-#            - intent: one_victim # Несколько пострадавших: Нет
-#            - action: utter_answer_1 # После АВТО ребенок, ПБ
-#        - case:
-#            - intent: several_victims # Несколько пострадавших: Да
-#            - action: utter_answer_2 # Массовый АВТОслучай, есть дети, ВБ
-#
-#  case_adult:
-#    - intent: adult # Взрослый
-#    - action: utter_number_of # Несколько пострадавших?
-#    - next:
-#        - case:
-#            - intent: one_victim # Несколько пострадавших: Нет
-#            - action: utter_answer_3 # После АВТО, ВБ
-#        - case:
-#            - intent: several_victims # Несколько пострадавших: Да
-#            - action: utter_answer_4 # Массовый АВТОслучай, ВБ
-#
-## БЛОК 2 - ДТП + Адрес
-#
-#  case_location:
-#    - intent: location # Ул., общ. Место\Учр. предпр. , ор
-#    - action: utter_conditions # Обстоятельства ДТП
-#    - next:
-#        case_pedestrian_hit:
-#        case_car_collision:
-#        case_transport_collision:
-#        case_rail_collision:
-#
-#  case_pedestrian_hit:
-#    - intent: pedestrian_hit # Сбит пешеход
-#    - checkpoint: pedestrian # Продолжение и для case_pedestrian_hit_start
-#    - action: utter_age # Возраст
-#    - next:
-#        - case:
-#            - intent: child # Ребенок до 18
-#            - action: utter_number_of # Несколько пострадавших?
-#            - next:
-#                - case:
-#                    - intent: one_victim # Несколько пострадавших: Нет
-#                    - action: utter_answer_5 # АВТО ребенок, ПБ
-#                - case:
-#                    - intent: several_victims # Несколько пострадавших: Да
-#                    - action: utter_answer_6 # Массовый АВТОслучай, есть дети, РХБ, ПБ
-#        - case:
-#            - intent: adult # Взрослый
-#            - action: utter_number_of # Несколько пострадавших?
-#            - next:
-#                - case:
-#                    - intent: one_victim # Несколько пострадавших: Нет
-#                    - action: utter_answer_11 # АВТО пешеход, ВБ
-#                - case:
-#                    - intent: several_victims # Несколько пострадавших: Да
-#                    - action: utter_answer_12 # Массовый АВТОслучай, РХБ, ВБ
-#
-#  case_car_collision:
-#    - intent: car_collision # Столкновение автомашин
-#    - checkpoint: car # Продолжение и для case_car_collision_start
-#    - action: utter_age # Возраст
-#    - next:
-#        - case:
-#            - intent: child # Ребенок до 18
-#            - action: utter_number_of # Несколько пострадавших?
-#            - next:
-#                - case:
-#                    - intent: one_victim # Несколько пострадавших: Нет
-#                    - action: utter_answer_7 # Автоавария, ребенок, ПБ
-#                - case:
-#                    - intent: several_victims # Несколько пострадавших: Да
-#                    - action: utter_answer_6 # Массовый АВТОслучай, есть дети, РХБ, ПБ
-#        - case:
-#            - intent: adult # Взрослый
-#            - action: utter_number_of # Несколько пострадавших?
-#            - next:
-#                - case:
-#                    - intent: one_victim # Несколько пострадавших: Нет
-#                    - action: utter_answer_13 # АВТОавария, ВБ
-#                - case:
-#                    - intent: several_victims # Несколько пострадавших: Да
-#                    - action: utter_answer_12 # Массовый АВТОслучай, РХБ, ВБ
-#
-#  case_transport_collision:
-#    - intent: transport_collision # Столкновение обществ. транс-та
-#    - checkpoint: transport # Продолжение и для case_transport_collision_start
-#    - action: utter_age # Возраст
-#    - next:
-#        - case:
-#            - intent: child # Ребенок до 18
-#            - action: utter_number_of # Несколько пострадавших?
-#            - next:
-#                - case:
-#                    - intent: one_victim # Несколько пострадавших: Нет
-#                    - action: utter_answer_8 # Авто общественного транспорта, есть дети, ВБ, РХБ
-#                - case:
-#                    - intent: several_victims # Несколько пострадавших: Да
-#                    - action: utter_answer_6 # Массовый АВТОслучай, есть дети, РХБ, ПБ
-#        - case:
-#            - intent: adult # Взрослый
-#            - action: utter_number_of # Несколько пострадавших?
-#            - next:
-#                - case:
-#                    - intent: one_victim # Несколько пострадавших: Нет
-#                    - action: utter_answer_14 # АВТО общественного транспорта, ВБ, РХБ
-#                - case:
-#                    - intent: several_victims # Несколько пострадавших: Да
-#                    - action: utter_answer_12 # Массовый АВТОслучай, РХБ, ВБ
-#
-#  case_rail_collision:
-#    - intent: rail_collision # Рельсовая травма
-#    - checkpoint: rail # Продолжение и для case_rail_collision_start
-#    - action: utter_age # Возраст
-#    - next:
-#        - case:
-#            - intent: child # Ребенок до 18
-#            - action: utter_number_of # Несколько пострадавших?
-#            - next:
-#                - case:
-#                    - intent: one_victim # Несколько пострадавших: Нет
-#                    - action: utter_answer_9 # Рельсовая травма ребенок, ПРБ
-#                - case:
-#                    - intent: several_victims # Несколько пострадавших: Да
-#                    - action: utter_answer_10 # Рельсовая травма массовое, есть дети, РХБ, ВБ
-#        - case:
-#            - intent: adult # Взрослый
-#            - action: utter_number_of # Несколько пострадавших?
-#            - next:
-#                - case:
-#                    - intent: one_victim # Несколько пострадавших: Нет
-#                    - action: utter_answer_15 # Рельсовая травма, РХБ
-#                - case:
-#                    - intent: several_victims # Несколько пострадавших: Да
-#                    - action: utter_answer_16 # Рельсовая травма, массовое, РХБ, ВБ
-#
-## БЛОК 3 - Причина + Адрес
-#
-#  case_pedestrian_hit_start:
-#    - intent: pedestrian_hit # Сбит пешеход
-#    - action: utter_location # Где случилось
-#    - intent: location # Ул., общ. Место\Учр. предпр. , ор
-#    - checkpoint: pedestrian # Продолжение в case_pedestrian_hit
-#
-#  case_car_collision_start:
-#    - intent: car_collision # Столкновение автомашин
-#    - action: utter_location # Где случилось
-#    - intent: location # Ул., общ. Место\Учр. предпр. , ор
-#    - checkpoint: car # Продолжение в case_car_collision
-#
-#  case_transport_collision_start:
-#    - intent: transport_collision # Столкновение обществ. транс-та
-#    - action: utter_location # Где случилось
-#    - intent: location # Ул., общ. Место\Учр. предпр. , ор
-#    - checkpoint: transport # Продолжение в case_transport_collision
-#
-#  case_rail_collision_start:
-#    - intent: rail_collision # Рельсовая травма
-#    - action: utter_location # Где случилось
-#    - intent: location # Ул., общ. Место\Учр. предпр. , ор
-#    - checkpoint: rail # Продолжение в case_rail_collision
 
 
 

@@ -7,7 +7,7 @@ nlu:
 
 - intent: stomach_ache # Боли в животе
   examples: |
-    -
+    - Боли в животе
 
 - intent: nausea # Тошнота, рвота
   examples: |
