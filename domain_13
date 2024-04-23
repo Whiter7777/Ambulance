@@ -1,0 +1,17 @@
+version: "3.1"
+
+intents:
+  - mining
+  - flat
+  - child
+
+responses:
+  utter_reason:
+  - text: "Причина звонка?"
+
+  utter_age:
+  - text: "Возраст пострадавшего?"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

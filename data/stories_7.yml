@@ -1,0 +1,52 @@
+version: "3.1"
+
+stories:
+
+- story: accident_7_1
+  steps:
+  - intent: intoxication # Отравление
+  - action: utter_age # Возраст пострадавшего
+  - or:
+    - intent: child # Ребенок до 18
+    - intent: adult # Взрослый
+  - action: utter_sign_many # Проставлен признак много (галочка на форме)?
+  - intent: many_off # Не проставлен признак много (галочка на форме)
+  - action: utter_consciousness # Сознание?
+  - or:
+    - intent: unconscious # Без сознания
+    - intent: сonscious # В сознании
+  - action: utter_what_poisoned # Отравился чем?
+  - or:
+    - intent: medicament # Лекарство
+    - intent: organophosphorus # ФОС
+    - intent: gas # Газ
+    - intent: mushrooms # Грибы
+    - intent: alcohol # Сурогаты алкоголя
+    - intent: drugs # Наркотики
+    - intent: products # Продукты
+    - intent: other # Прочие вещества
+    - intent: unknown # Неизвестно
+  - action: ???
+
+
+- story: accident_7_2
+  steps:
+  - intent: intoxication # Отравление
+  - action: utter_age # Возраст пострадавшего
+  - or:
+    - intent: child # Ребенок до 18
+    - intent: adult # Взрослый
+  - action: utter_sign_many # Проставлен признак много (галочка на форме)?
+  - intent: many_on # Проставлен признак много (галочка на форме)
+  - action: utter_what_poisoned # Отравился чем?
+  - or:
+    - intent: medicament # Лекарство
+    - intent: organophosphorus # ФОС
+    - intent: gas # Газ
+    - intent: mushrooms # Грибы
+    - intent: alcohol # Сурогаты алкоголя
+    - intent: drugs # Наркотики
+    - intent: products # Продукты
+    - intent: other # Прочие вещества
+    - intent: unknown # Неизвестно
+  - action: ???

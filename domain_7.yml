@@ -1,0 +1,39 @@
+version: "3.1"
+
+intents:
+  - intoxication
+  - child
+  - adult
+  - many_on
+  - many_off
+  - unconscious
+  - сonscious
+  - medicament
+  - organophosphorus
+  - gas
+  - mushrooms
+  - alcohol
+  - drugs
+  - products
+  - other
+  - unknown
+
+responses:
+  utter_reason:
+  - text: "Причина звонка?"
+
+  utter_age:
+  - text: "Возраст пострадавшего?"
+
+  utter_consciousness:
+  - text: "Сознание"
+
+  utter_sign_many:
+  - text: "Проставлен признак много (галочка на форме)?"
+
+  utter_what_poisoned:
+  - text: "Отравился чем?"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

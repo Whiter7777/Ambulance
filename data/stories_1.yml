@@ -3,9 +3,7 @@ version: "3.1"
 stories:
 
 - story: traffic_accident_1
-- steps:
-  - intent: call # Поступил звонок
-  - action: utter_reason # Причина звонка
+  steps:
   - intent: traffic_accident # ДТП
   - action: utter_location # Где случилось
   - intent: flat # Квартира
@@ -13,45 +11,41 @@ stories:
   - checkpoint: age_checkpoint
 
 - story: traffic_accident_2
-- steps:
-  - intent: call # Поступил звонок
-  - action: utter_reason # Причина звонка
+  steps:
   - intent: traffic_accident # ДТП
   - action: utter_location # Где случилось
   - intent: location # Ул., общ. Место\Учр. предпр. , ор
   - action: utter_conditions # Обстоятельства ДТП
   - or:
-      - intent: pedestrian_hit # Сбит пешеход
-      - intent: car_collision # Столкновение автомашин
-      - intent: transport_collision # Столкновение обществ. транс-та
-      - intent: rail_collision # Рельсовая травма
+    - intent: pedestrian_hit # Сбит пешеход
+    - intent: car_collision # Столкновение автомашин
+    - intent: transport_collision # Столкновение обществ. транс-та
+    - intent: rail_collision # Рельсовая травма
   - action: utter_age # Возраст
   - checkpoint: age_checkpoint
 
 - story: traffic_accident_3
-- steps:
-  - intent: call # Поступил звонок
-  - action: utter_reason # Причина звонка
+  steps:
   - or:
-      - intent: pedestrian_hit # Сбит пешеход
-      - intent: car_collision # Столкновение автомашин
-      - intent: transport_collision # Столкновение обществ. транс-та
-      - intent: rail_collision # Рельсовая травма
+    - intent: pedestrian_hit # Сбит пешеход
+    - intent: car_collision # Столкновение автомашин
+    - intent: transport_collision # Столкновение обществ. транс-та
+    - intent: rail_collision # Рельсовая травма
   - action: utter_location # Где случилось
   - intent: location # Ул., общ. Место\Учр. предпр. , ор
   - action: utter_age # Возраст
   - checkpoint: age_checkpoint
 
 - story : traffic_accident_continuation
-- steps:
+  steps:
   - checkpoint: age_checkpoint
   - or:
-      - intent: child # Ребенок до 18
-      - intent: adult # Взрослый
+    - intent: child # Ребенок до 18
+    - intent: adult # Взрослый
   - action: utter_number_of # Несколько пострадавших?
   - or:
-      - intent: one_victim # Несколько пострадавших: Нет
-      - intent: several_victims # Несколько пострадавших: Да
+    - intent: one_victim # Несколько пострадавших: Нет
+    - intent: several_victims # Несколько пострадавших: Да
   - action: ???
 
 

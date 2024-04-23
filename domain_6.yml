@@ -1,0 +1,48 @@
+version: "3.1"
+
+intents:
+  - burn
+  - child
+  - adult
+  - many_on
+  - many_off
+  - flame
+  - boiling_water
+  - chemical_agent
+  - plant
+  - electrical_burn
+  - sun
+  - head
+  - neck
+  - breast
+  - stomach
+  - back
+  - hand
+  - leg
+  - several_areas
+  - respiratory_tract
+  - unconscious
+  - сonscious
+
+responses:
+  utter_reason:
+  - text: "Причина звонка?"
+
+  utter_age:
+  - text: "Возраст пострадавшего?"
+
+  utter_sign_many:
+  - text: "Проставлен признак много (галочка на форме)?"
+
+  utter_localization:
+  - text: "Локализация?"
+
+  utter_consciousness:
+  - text: "Сознание"
+
+  utter_what_burn:
+  - text: "Ожог чем?"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

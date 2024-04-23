@@ -1,0 +1,84 @@
+version: "3.1"
+
+stories:
+
+- story: accident_6_1
+  steps:
+  - intent: burn # Ожог
+  - action: utter_age # Возраст пострадавшего
+  - or:
+    - intent: child # Ребенок до 18
+    - intent: adult # Взрослый
+  - action: utter_sign_many # Проставлен признак много (галочка на форме)?
+  - intent: many_on # Проставлен признак много (галочка на форме)
+  - action: utter_what_burn # Ожог чем?
+  - or:
+    - intent: flame # Пламенем
+    - intent: boiling_water # Кипятком
+    - intent: chemical_agent # Химическим веществом
+    - intent: plant # Растением
+    - intent: electrical_burn # Электроожог
+    - intent: sun # Солнцем
+  - action: ???
+
+- story: accident_6_2
+  steps:
+  - intent: burn # Ожог
+  - action: utter_age # Возраст пострадавшего
+  - or:
+    - intent: child # Ребенок до 18
+    - intent: adult # Взрослый
+  - action: utter_sign_many # Проставлен признак много (галочка на форме)?
+  - intent: many_off # Не проставлен признак много (галочка на форме)
+  - action: utter_what_burn # Ожог чем?
+  - or:
+    - intent: flame # Пламенем
+    - intent: boiling_water # Кипятком
+    - intent: chemical_agent # Химическим веществом
+  - action: utter_localization # Локализация
+  - or:
+    - intent: head #Голова
+    - intent: neck # Шея
+    - intent: breast # Грудь
+    - intent: stomach # Живот
+    - intent: back # Спина
+    - intent: hand # Рука
+    - intent: leg # Нога
+    - intent: several_areas #Несколько областей
+    - intent: respiratory_tract # Верхние дыхательные пути
+  - action: utter_consciousness # Сознание?
+  - or:
+    - intent: unconscious # Без сознания
+    - intent: сonscious # В сознании
+  - action: ???
+
+
+- story: accident_6_3
+  steps:
+  - intent: burn # Ожог
+  - action: utter_age # Возраст пострадавшего
+  - or:
+    - intent: child # Ребенок до 18
+    - intent: adult # Взрослый
+  - action: utter_sign_many # Проставлен признак много (галочка на форме)?
+  - intent: many_off # Не проставлен признак много (галочка на форме)
+  - action: utter_what_burn # Ожог чем?
+  - or:
+    - intent: plant # Растением
+    - intent: electrical_burn # Электроожог
+    - intent: sun # Солнцем
+  - action: utter_localization # Локализация
+  - or:
+    - intent: head #Голова
+    - intent: neck # Шея
+    - intent: breast # Грудь
+    - intent: stomach # Живот
+    - intent: back # Спина
+    - intent: hand # Рука
+    - intent: leg # Нога
+    - intent: several_areas #Несколько областей
+  - action: utter_consciousness # Сознание?
+  - or:
+    - intent: unconscious # Без сознания
+    - intent: сonscious # В сознании
+  - action: ???
