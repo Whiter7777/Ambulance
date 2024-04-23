@@ -52,7 +52,6 @@ stories:
     - intent: сonscious # В сознании
   - action: ???
 
-
 - story: accident_6_3
   steps:
   - intent: burn # Ожог

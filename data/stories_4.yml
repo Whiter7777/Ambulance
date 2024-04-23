@@ -1,0 +1,31 @@
+version: "3.1"
+
+stories:
+
+- story: accident_4_1
+  steps:
+  - or:
+    - intent: bomb_threat # Угроза взрыва
+    - intent: explosive_device # Подозрение на взрывное устройство
+    - intent: explosion # Взрыв
+  - action: utter_age # Возраст
+  - or:
+    - intent: child # Ребенок до 18
+    - intent: adult # Взрослый
+  - action: ???
+
+- story: accident_4_2
+  steps:
+  - or:
+    - intent: firefight # Перестрелка
+    - intent: murder # Убийство
+    - intent: fighting # Драка
+  - action: utter_age # Возраст
+  - or:
+    - intent: child # Ребенок до 18
+    - intent: adult # Взрослый
+  - action: utter_conflict_continues # Конфликт продолжается?
+  - or:
+    - intent: conflict_on # Конфликт продолжается: Да
+    - intent: conflict_off # Конфликт продолжается: Нет
+  - action: ???

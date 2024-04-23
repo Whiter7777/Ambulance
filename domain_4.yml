@@ -1,0 +1,32 @@
+version: "3.1"
+
+intents:
+  - bomb_threat
+  - explosive_device
+  - explosion
+  - firefight
+  - murder
+  - fighting
+  - child
+  - adult
+  - conflict_on
+  - conflict_off
+  - one_victim
+  - several_victims
+
+responses:
+  utter_reason:
+  - text: "Причина звонка?"
+
+  utter_age:
+  - text: "Возраст пострадавшего?"
+
+  utter_conflict_continues:
+  - text: "Конфликт продолжается?"
+
+  utter_number_of:
+  - text: "Несколько пострадавших?"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
