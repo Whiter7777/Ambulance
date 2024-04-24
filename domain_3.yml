@@ -1,0 +1,49 @@
+version: "3.1"
+
+intents:
+  - pregnancy
+  - stomach_ache
+  - nausea
+  - headache
+  - backache
+  - unconscious
+  - labor_pains
+  - gave_birth
+  - giving_birth_now
+  - child
+  - adult
+  - up_to_22_weeks
+  - more_than_22_weeks
+  - first_birth
+  - repeated_births
+  - bleeding
+  - no_bleeding
+  - convulsions
+  - no_convulsions
+
+
+responses:
+  utter_reason:
+  - text: "Причина звонка?"
+
+  utter_age:
+  - text: "Возраст пострадавшего?"
+
+  utter_complaint:
+  - text: "Жалобы?"
+
+  utter_gestational_age:
+  - text: "Срок беременности?"
+
+  utter_consciousness:
+  - text: "Сознание?"
+
+  utter_bleeding:
+  - text: "Кровотечение?"
+
+  utter_convulsions:
+  - texe: "Судороги?"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

@@ -1,0 +1,102 @@
+version: "3.1"
+
+stories:
+
+- story: accident_3_1
+  steps:
+  - intent: pregnancy # Беременность
+  - action: utter_complaint # Жалобы
+  - or:
+    - intent: stomach_ache # Боли в животе
+    - intent: nausea # Тошнота, рвота
+    - intent: headache # Головная боль
+    - intent: backache # Боль в спине
+  - action: utter_age # Возраст
+  - or:
+    - intent: child # Ребенок до 18
+    - intent: adult # Взрослый
+  - action: utter_gestational_age # Срок беременности?
+  - or:
+    - intent: up_to_22_weeks # До 22 недель
+    - intent: more_than_22_weeks # Более 22 недель
+  - action: utter_bleeding # Кровотечение?
+  - or:
+    - intent: bleeding # Кровотечение: Да
+    - intent: no_bleeding # Кровотечение: Нет
+  - action: ???
+
+- story: accident_3_2
+  steps:
+  - intent: pregnancy # Беременность
+  - action: utter_complaint # Жалобы
+  - intent: labor_pains # Схватки
+  - action: utter_age # Возраст
+  - or:
+    - intent: child # Ребенок до 18
+    - intent: adult # Взрослый
+  - action: utter_gestational_age # Срок беременности?
+  - intent: up_to_22_weeks # До 22 недель
+  - action: ???
+
+- story: accident_3_3
+  steps:
+  - intent: pregnancy # Беременность
+  - action: utter_complaint # Жалобы
+  - intent: unconscious # Нет сознания
+  - action: utter_age # Возраст
+  - or:
+    - intent: child # Ребенок до 18
+    - intent: adult # Взрослый
+  - action: utter_gestational_age # Срок беременности?
+  - or:
+    - intent: up_to_22_weeks # До 22 недель
+    - intent: more_than_22_weeks # Более 22 недель
+  - action: utter_bleeding # Кровотечение?
+  - or:
+    - intent: bleeding # Кровотечение: Да
+    - intent: no_bleeding # Кровотечение: Нет
+  - action: utter_convulsions # Судороги?
+  - or:
+    - intent: convulsions # Судороги: Да
+    - intent: no_convulsions # Судороги: Нет
+    - action: ???
+
+- story: accident_3_4
+  steps:
+  - intent: pregnancy # Беременность
+  - action: utter_complaint # Жалобы
+  - intent: gave_birth # Родила
+  - action: utter_age # Возраст
+  - or:
+    - intent: child # Ребенок до 18
+    - intent: adult # Взрослый
+  - action: utter_gestational_age # Срок беременности?
+  - intent: more_than_22_weeks # Более 22 недель
+  - action: utter_bleeding # Кровотечение?
+  - or:
+    - intent: bleeding # Кровотечение: Да
+    - intent: no_bleeding # Кровотечение: Нет
+  - action: ???
+
+- story: accident_3_5
+  steps:
+  - intent: pregnancy # Беременность
+  - action: utter_complaint # Жалобы
+  - or:
+    - intent: giving_birth_now # Рожает
+    - intent: labor_pains # Схватки
+  - action: utter_age # Возраст
+  - or:
+    - intent: child # Ребенок до 18
+    - intent: adult # Взрослый
+  - action: utter_gestational_age # Срок беременности?
+  - intent: more_than_22_weeks # Более 22 недель
+  - action: utter_bleeding # Кровотечение?
+  - or:
+      - intent: bleeding # Кровотечение: Да
+      - intent: no_bleeding # Кровотечение: Нет
+  - action: utter_convulsions # Судороги?
+  - or:
+      - intent: convulsions # Судороги: Да
+      - intent: no_convulsions # Судороги: Нет
+  - action: ???

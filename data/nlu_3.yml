@@ -56,11 +56,11 @@ nlu:
   examples: |
     - Более 22 недель
 
-- intent: first birth # Первые роды
+- intent: first_birth # Первые роды
   examples: |
     - Первые роды
 
-- intent: repeated births # Повторные роды
+- intent: repeated_births # Повторные роды
   examples: |
     - Повторные роды
 
