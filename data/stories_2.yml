@@ -2,6 +2,396 @@ version: "3.1"
 
 stories:
 
-- story: unconscious # Без сознания
+- story: accident_2_1 # Без сознания
   steps:
-  - intent:
+  - intent: unconscious # Без сознания
+  - action: utter_why_unconscious # Почему без сознания?
+  - intent: pregnancy # Беременность
+  - action: utter_age # Возраст
+  - or:
+    - intent: child # Ребенок до 18
+    - intent: adult # Взрослый
+  - action: utter_gestational_age # Срок беременности?
+  - or:
+    - intent: up_to_22_weeks # До 22 недель
+    - intent: more_than_22_weeks # Более 22 недель
+  - action: utter_bleeding # Кровотечение?
+  - or:
+    - intent: bleeding # Кровотечение: Да
+    - intent: no_bleeding # Кровотечение: Нет
+  - action: utter_convulsions # Судороги?
+  - or:
+    - intent: convulsions # Судороги: Да
+    - intent: no_convulsions # Судороги: Нет
+    - action: ???
+
+- story: accident_2_2 # Без сознания
+  steps:
+  - intent: unconscious # Без сознания
+  - action: utter_why_unconscious # Почему без сознания?
+  - intent: bite # Укус
+  - action: utter_who_bit # Кем укус?
+  - or:
+    - intent: dog # Собака
+    - intent: snake # Змея
+    - intent: insect # Насекомое
+    - intent: unknown # Неизвестно
+  - action: utter_age # Возраст
+  - or:
+    - intent: child # Ребенок до 18
+    - intent: adult # Взрослый
+  - action: ???
+
+- story: accident_2_3 # Без сознания
+  steps:
+  - intent: unconscious # Без сознания
+  - action: utter_why_unconscious # Почему без сознания?
+  - intent: burn # Ожог
+  - action: utter_age # Возраст
+  - or:
+    - intent: child # Ребенок до 18
+    - intent: adult # Взрослый
+  - action: utter_what_burn # Ожог чем?
+  - or:
+    - intent: flame # Пламенем
+    - intent: boiling_water # Кипятком
+    - intent: chemical_agent # Химическим веществом
+  - action: utter_localization # Локализация
+  - or:
+    - intent: head #Голова
+    - intent: neck # Шея
+    - intent: breast # Грудь
+    - intent: stomach # Живот
+    - intent: back # Спина
+    - intent: hand # Рука
+    - intent: leg # Нога
+    - intent: several_areas #Несколько областей
+    - intent: respiratory_tract # Верхние дыхательные пути
+  - action: ???
+
+- story: accident_2_4 # Без сознания
+  steps:
+  - intent: unconscious # Без сознания
+  - action: utter_why_unconscious # Почему без сознания?
+  - intent: burn # Ожог
+  - action: utter_age # Возраст
+  - or:
+    - intent: child # Ребенок до 18
+    - intent: adult # Взрослый
+  - action: utter_what_burn # Ожог чем?
+  - or:
+    - intent: plant # Растением
+    - intent: electrical_burn # Электроожог
+    - intent: sun # Солнцем
+  - action: utter_localization # Локализация
+  - or:
+    - intent: head #Голова
+    - intent: neck # Шея
+    - intent: breast # Грудь
+    - intent: stomach # Живот
+    - intent: back # Спина
+    - intent: hand # Рука
+    - intent: leg # Нога
+    - intent: several_areas #Несколько областей
+  - action: ???
+
+- story: accident_2_5 # Без сознания
+  steps:
+  - intent: unconscious # Без сознания
+  - action: utter_why_unconscious # Почему без сознания?
+  - intent: intoxication # Отравление
+  - action: utter_age # Возраст
+  - or:
+    - intent: child # Ребенок до 18
+    - intent: adult # Взрослый
+  - action: utter_what_poisoned # Отравился чем?
+  - or:
+    - intent: medicament # Лекарство
+    - intent: organophosphorus # ФОС
+    - intent: gas # Газ
+    - intent: mushrooms # Грибы
+    - intent: alcohol # Сурогаты алкоголя
+    - intent: drugs # Наркотики
+    - intent: products # Продукты
+    - intent: other # Прочие вещества
+    - intent: unknown # Неизвестно
+  - action: ???
+
+- story: accident_2_6 # Без сознания
+  steps:
+  - intent: unconscious # Без сознания
+  - action: utter_why_unconscious # Почему без сознания?
+  - intent: bleeding # Кровотечение
+  - action: utter_injury # Травма?
+  - intent: no_injury # Травмы не было
+  - action: utter_where_bleeding # Кровотечение откуда?
+  - or:
+    - intent: from_mouth # Изо рта
+    - intent: female_genital # Из половых путей женщины
+    - intent: from_nose # Из носа
+    - intent: from_anus # Из заднего прохода
+    - intent: vomiting_blood # Рвота с кровью
+  - action: utter_age # Возраст
+  - or:
+    - intent: child # Ребенок до 18
+    - intent: adult # Взрослы
+  - action: ???
+
+- story: accident_2_7 # Без сознания
+  steps:
+  - intent: unconscious # Без сознания
+  - action: utter_why_unconscious # Почему без сознания?
+  - intent: bleeding # Кровотечение
+  - action: utter_injury # Травма?
+  - intent: injury # Травма была
+  - action: utter_cause_of_injury # Причина травмы
+  - or:
+    - intent: falling_objects # Падение предметов
+    - intent: falling # Падение с высоты
+    - intent: beat # Избили
+    - intent: cut_veins # Порезал вены
+    - intent: gunshot_wound # Огнестрельное ранение
+  - action: utter_age # Возраст
+  - or:
+    - intent: child # Ребенок до 18
+    - intent: adult # Взрослы
+  - action: ???
+
+- story: accident_2_8 # Без сознания
+  steps:
+  - intent: unconscious # Без сознания
+  - action: utter_why_unconscious # Почему без сознания?
+  - intent: bleeding # Кровотечение
+  - action: utter_injury # Травма?
+  - intent: injury # Травма была
+  - action: utter_cause_of_injury # Причина травмы
+  - intent: knife_wound # Ножевое ранение
+  - action: utter_localization # Локализация?
+  - or:
+    - intent: neck # Шея
+    - intent: breast # Грудь
+    - intent: stomach # Живот
+    - intent: back # Спина
+    - intent: hand # Рука
+    - intent: leg # Нога
+    - intent: several_areas #Несколько областей
+  - action: utter_age # Возраст
+  - or:
+    - intent: child # Ребенок до 18
+    - intent: adult # Взрослы
+  - action: ???
+
+- story: accident_2_9 # Без сознания
+  steps:
+  - intent: unconscious # Без сознания
+  - action: utter_why_unconscious # Почему без сознания?
+  - intent: bleeding # Кровотечение
+  - action: utter_injury # Травма?
+  - intent: injury # Травма была
+  - action: utter_cause_of_injury # Причина травмы
+  - intent: other # Прочие
+  - action: utter_localization # Локализация?
+  - or:
+    - intent: head #Голова
+    - intent: neck # Шея
+    - intent: breast # Грудь
+    - intent: stomach # Живот
+    - intent: back # Спина
+    - intent: hand # Рука
+    - intent: leg # Нога
+    - intent: several_areas #Несколько областей
+    - intent: ear # Ухо
+  - action: utter_age # Возраст
+  - or:
+    - intent: child # Ребенок до 18
+    - intent: adult # Взрослы
+  - action: ???
+
+- story: accident_2_10 # Без сознания
+  steps:
+  - intent: unconscious # Без сознания
+  - action: utter_why_unconscious # Почему без сознания?
+  - intent: bleeding # Кровотечение
+  - action: utter_injury # Травма?
+  - intent: injury # Травма была
+  - action: utter_cause_of_injury # Причина травмы
+  - intent: fracture # Перелом
+  - action: utter_localization # Локализация?
+  - or:
+    - intent: jaws # Челюсти
+    - intent: hand # Рука
+    - intent: leg # Ногаъ
+    - intent: finger # Палец кисти
+    - intent: toe # Палец стопы
+  - action: utter_age # Возраст
+  - or:
+    - intent: child # Ребенок до 18
+    - intent: adult # Взрослы
+  - action: ???
+
+- story: accident_2_10 # Без сознания
+  steps:
+  - intent: unconscious # Без сознания
+  - action: utter_why_unconscious # Почему без сознания?
+  - or:
+    - intent: hanging # Повешение
+    - intent: drowning # Утопление
+    - intent: electric_shock # Электротравма
+    - intent: rape # Изнасилование
+    - intent: falling_objects # Падение предметов
+    - intent: falling # Падение с высоты
+    - intent: beat # Избили
+    - intent: cut_veins # Порезал вены
+    - intent: gunshot_wound # Огнестрельное ранение
+  - action: utter_age # Возраст
+  - or:
+    - intent: child # Ребенок до 18
+    - intent: adult # Взрослы
+  - action: ???
+
+- story: accident_2_11 # Без сознания
+  steps:
+  - intent: unconscious # Без сознания
+  - action: utter_why_unconscious # Почему без сознания?
+  - intent: injury # Травма
+  - action: utter_cause_of_injury # Причина травмы?
+  - intent: knife_wound # Ножевое ранение
+  - action: utter_localization # Локализация?
+  - or:
+    - intent: neck # Шея
+    - intent: breast # Грудь
+    - intent: stomach # Живот
+    - intent: back # Спина
+    - intent: hand # Рука
+    - intent: leg # Нога
+    - intent: several_areas #Несколько областей
+  - action: utter_age # Возраст
+  - or:
+    - intent: child # Ребенок до 18
+    - intent: adult # Взрослы
+  - action: ???
+
+- story: accident_2_12 # Без сознания
+  steps:
+  - intent: unconscious # Без сознания
+  - action: utter_why_unconscious # Почему без сознания?
+  - intent: injury # Травма
+  - action: utter_cause_of_injury # Причина травмы?
+  - intent: other # Прочие
+  - action: utter_localization # Локализация?
+  - or:
+    - intent: head #Голова
+    - intent: neck # Шея
+    - intent: breast # Грудь
+    - intent: stomach # Живот
+    - intent: back # Спина
+    - intent: hand # Рука
+    - intent: leg # Нога
+    - intent: several_areas #Несколько областей
+    - intent: ear # Ухо
+  - action: utter_age # Возраст
+  - or:
+    - intent: child # Ребенок до 18
+    - intent: adult # Взрослы
+  - action: ???
+
+- story: accident_2_13 # Без сознания
+  steps:
+  - intent: unconscious # Без сознания
+  - action: utter_why_unconscious # Почему без сознания?
+  - intent: injury # Травма
+  - action: utter_cause_of_injury # Причина травмы?
+  - intent: bruise # Ушиб
+  - action: utter_localization # Локализация?
+  - or:
+    - intent: head #Голова
+    - intent: neck # Шея
+    - intent: breast # Грудь
+    - intent: stomach # Живот
+    - intent: back # Спина
+    - intent: hand # Рука
+    - intent: leg # Нога
+    - intent: several_areas #Несколько областей
+  - action: utter_age # Возраст
+  - or:
+    - intent: child # Ребенок до 18
+    - intent: adult # Взрослы
+  - action: ???
+
+- story: accident_2_14 # Без сознания
+  steps:
+  - intent: unconscious # Без сознания
+  - action: utter_why_unconscious # Почему без сознания?
+  - intent: injury # Травма
+  - action: utter_cause_of_injury # Причина травмы?
+  - intent: separation # Отрыв
+  - action: utter_localization # Локализация?
+  - or:
+    - intent: ear # Ухо
+    - intent: hand # Рука
+    - intent: leg # Нога
+    - intent: finger # Палец кисти
+    - intent: toe # Палец стопы
+  - action: utter_age # Возраст
+  - or:
+    - intent: child # Ребенок до 18
+    - intent: adult # Взрослы
+  - action: ???
+
+- story: accident_2_15 # Без сознания
+  steps:
+  - intent: unconscious # Без сознания
+  - action: utter_why_unconscious # Почему без сознания?
+  - intent: injury # Травма
+  - action: utter_cause_of_injury # Причина травмы?
+  - intent: fracture # Перелом
+  - action: utter_localization # Локализация?
+  - or:
+    - intent: jaws # Челюсти
+    - intent: spine # Позвоночник
+    - intent: edge # Ребро
+    - intent: hand # Рука
+    - intent: leg # Нога
+    - intent: finger # Палец кисти
+    - intent: toe # Палец стопы
+  - action: utter_age # Возраст
+  - or:
+    - intent: child # Ребенок до 18
+    - intent: adult # Взрослы
+  - action: ???
+
+- story: accident_2_16 # Без сознания
+  steps:
+  - intent: unconscious # Без сознания
+  - action: utter_why_unconscious # Почему без сознания?
+  - intent: foreign_object # Инородное тело
+  - action: utter_localization # Локализация?
+  - or:
+    - intent: nose # Нос
+    - intent: throat # Глотка
+    - intent: respiratory_tract # Верхние дыхательные пути
+    - intent: rectum # Прямая кишка
+    - intent: urethra # Уретра
+    - intent: vagina # Вагина
+  - action: utter_age # Возраст
+  - or:
+    - intent: child # Ребенок до 18
+    - intent: adult # Взрослы
+  - action: ???
+
+- story: accident_2_17 # Без сознания
+  steps:
+  - intent: unconscious # Без сознания
+  - action: utter_why_unconscious # Почему без сознания?
+  - intent: unknown # Неизвестно
+  - action: utter_age # Возраст
+  - or:
+    - intent: child # Ребенок до 18
+    - intent: adult # Взрослы
+  - action: utter_location # Где случилось?
+  - or:
+    - intent: flat # Квартира
+    - intent: up_to_22_weeks # До 22 недель
+  - action: ???
+
+

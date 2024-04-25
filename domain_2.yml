@@ -49,7 +49,7 @@ intents:
 responses:
 
   utter_reason:
-    - text: "Причина звонка?"
+    - text: "Причин а звонка?"
 
   utter_why_unconscious:
     - text: "Почему без сознания?"
@@ -57,15 +57,44 @@ responses:
   utter_cause_of_injury:
   - text: "Причина травмы"
 
+  utter_gestational_age:
+  - text: "Срок беременности?"
+
   utter_localization:
   - text: "Локализация"
 
   utter_age:
   - text: "Возраст пострадавшего?"
 
+  utter_bleeding:
+  - text: "Кровотечение?"
 
+  utter_convulsions:
+  - texe: "Судороги?"
 
+  utter_who_bit:
+  - text: "Укус кем?"
 
+  utter_what_burn:
+  - text: "Ожог чем?"
+
+  utter_localization:
+  - text: "Локализация?"
+
+  utter_what_poisoned:
+  - text: "Отравился чем?"
+
+  utter_injury:
+  - text: "Травма?"
+
+  utter_where_bleeding:
+  - text: "Кровотечение откуда?"
+
+  utter_cause_of_injury:
+  - text: "Причина травмы?"
+
+  utter_location:
+  - text: "Где случилось?"
 
 session_config:
   session_expiration_time: 60

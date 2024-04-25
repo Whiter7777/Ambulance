@@ -7,6 +7,10 @@ nlu:
     - Потеря сознания
     - Нет сознания
 
+- intent: pregnancy # Беременность
+  examples: |
+    - Беременность
+
 - intent: bite # Укус
   examples: |
     - Укус
