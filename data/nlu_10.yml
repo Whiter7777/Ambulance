@@ -25,9 +25,25 @@ nlu:
   examples: |
     - Инородное тело
 
+- intent: falling_objects # Падение предметов
+  examples: |
+    - Падение предметов
+
+- intent: falling # Падение с высоты
+  examples: |
+    - Падение с высоты
+
 - intent: beat # Избили
   examples: |
     - Избили
+
+- intent: cut_veins # Порезал вены
+  examples: |
+    - Порезал вены
+
+- intent: gunshot_wound # Огнестрельное ранение
+  examples: |
+    - Огнестрельное ранение
 
 - intent: knife_wound # Ножевое ранение
   examples: |

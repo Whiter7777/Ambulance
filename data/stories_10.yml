@@ -1,3 +1,229 @@
 version: "3.1"
 
 stories:
+
+- story: accident_10_1
+  steps:
+  - intent: fire # Пожар
+  - action: utter_age # Возраст
+  - or:
+    - intent: child # Ребенок до 18
+    - intent: adult # Взрослый
+  - action: ???
+
+- story: accident_10_2
+  steps:
+  - or:
+    - intent: hanging # Повешение
+    - intent: drowning # Утопление
+    - intent: electric_shock # Электротравма
+    - intent: rape # Изнасилование
+  - action: utter_age # Возраст
+  - or:
+    - intent: child # Ребенок до 18
+    - intent: adult # Взрослый
+  - action: utter_consciousness # Сознание?
+  - or:
+    - intent: unconscious # Без сознания
+    - intent: сonscious # В сознании
+  - action: ???
+
+- story: accident_10_3
+  steps:
+  - intent: foreign_object # Инородное тело
+  - action: utter_localization # Локализация?
+  - or:
+    - intent: eye # Глаз
+    - intent: ear # Ухо
+    - intent: esophagus # Пищевод
+    - intent: breadbasket # Желудок
+  - action: utter_age # Возраст
+  - or:
+    - intent: child # Ребенок до 18
+    - intent: adult # Взрослый
+  - action: ???
+
+- story: accident_10_4
+  steps:
+  - intent: foreign_object # Инородное тело
+  - action: utter_localization # Локализация?
+  - or:
+    - intent: nose # Нос
+    - intent: throat # Глотка
+    - intent: respiratory_tract # Верхние дыхательные пути
+    - intent: rectum # Прямая кишка
+    - intent: urethra # Уретра
+    - intent: vagina # Влагалище
+  - action: utter_age # Возраст
+  - or:
+    - intent: child # Ребенок до 18
+    - intent: adult # Взрослый
+  - action: utter_consciousness # Сознание?
+  - or:
+    - intent: unconscious # Без сознания
+    - intent: сonscious # В сознании
+  - action: ???
+
+- story: accident_10_5
+  steps:
+  - or:
+    - intent: falling_objects # Падение предметов
+    - intent: falling # Падение с высот
+    - intent: beat # Избили
+    - intent: cut_veins # Порезал вены
+    - intent: gunshot_wound # Огнестрельное ранение
+  - action: utter_age # Возраст
+  - or:
+    - intent: child # Ребенок до 18
+    - intent: adult # Взрослый
+  - action: utter_consciousness # Сознание?
+  - or:
+    - intent: unconscious # Без сознания
+    - intent: сonscious # В сознании
+  - action: ???
+
+- story: accident_10_6
+  steps:
+  - intent: knife_wound # Ножевое ранение
+  - action: utter_localization # Локализация
+  - or:
+    - intent: neck # Шея
+    - intent: breast # Грудь
+    - intent: stomach # Живот
+    - intent: back # Спина
+    - intent: hand # Рука
+    - intent: leg # Нога
+    - intent: several_areas #Несколько областей
+  - action: utter_age # Возраст
+  - or:
+    - intent: child # Ребенок до 18
+    - intent: adult # Взрослый
+  - action: utter_consciousness # Сознание?
+  - or:
+    - intent: unconscious # Без сознания
+    - intent: сonscious # В сознании
+  - action: ???
+
+- story: accident_10_6
+  steps:
+  - intent: injury # Травма
+  - action: utter_localization # Локализация
+  - or:
+    - intent: head #Голова
+    - intent: neck # Шея
+    - intent: breast # Грудь
+    - intent: stomach # Живот
+    - intent: back # Спина
+    - intent: hand # Рука
+    - intent: leg # Нога
+    - intent: several_areas #Несколько областей
+    - intent: ear # Ухо
+  - action: utter_age # Возраст
+  - or:
+    - intent: child # Ребенок до 18
+    - intent: adult # Взрослый
+  - action: utter_consciousness # Сознание?
+  - or:
+    - intent: unconscious # Без сознания
+    - intent: сonscious # В сознании
+  - action: ???
+
+- story: accident_10_7
+  steps:
+  - intent: bruise # Ушиб
+  - action: utter_localization # Локализация
+  - or:
+    - intent: head #Голова
+    - intent: neck # Шея
+    - intent: breast # Грудь
+    - intent: stomach # Живот
+    - intent: back # Спина
+    - intent: hand # Рука
+    - intent: leg # Нога
+    - intent: several_areas #Несколько областей
+  - action: utter_age # Возраст
+  - or:
+    - intent: child # Ребенок до 18
+    - intent: adult # Взрослый
+  - action: utter_consciousness # Сознание?
+  - or:
+    - intent: unconscious # Без сознания
+    - intent: сonscious # В сознании
+  - action: ???
+
+
+- story: accident_10_8
+  steps:
+  - intent: separation # Отрыв
+  - action: utter_localization # Локализация
+  - or:
+    - intent: ear # Ухо
+    - intent: hand # Рука
+    - intent: leg # Нога
+    - intent: finger # Палец кисти
+    - intent: toe # Палец стопы
+  - action: utter_age # Возраст
+  - or:
+    - intent: child # Ребенок до 18
+    - intent: adult # Взрослый
+  - action: utter_consciousness # Сознание?
+  - or:
+    - intent: unconscious # Без сознания
+    - intent: сonscious # В сознании
+  - action: ???
+
+
+- story: accident_10_9
+  steps:
+  - intent: fracture # Перелом
+  - action: utter_localization # Локализация
+  - or:
+    - intent: jaws # Челюсти
+    - intent: spine # Позвоночник
+    - intent: edge # Ребро
+    - intent: hand # Рука
+    - intent: leg # Нога
+    - intent: finger # Палец кисти
+    - intent: toe # Палец стопы
+  - action: utter_age # Возраст
+  - or:
+    - intent: child # Ребенок до 18
+    - intent: adult # Взрослый
+  - action: utter_consciousness # Сознание?
+  - or:
+    - intent: unconscious # Без сознания
+    - intent: сonscious # В сознании
+  - action: ???
+
+- story: accident_10_10
+  steps:
+  - intent: luxation # Вывих
+  - action: utter_localization # Локализация
+  - or:
+    - intent: neck # Шея
+    - intent: spine # Позвоночник
+    - intent: hand # Рука
+    - intent: leg # Нога
+    - intent: jaws # Челюсти
+    - intent: finger # Палец кисти
+    - intent: toe # Палец стопы
+  - action: utter_age # Возраст
+  - or:
+    - intent: child # Ребенок до 18
+    - intent: adult # Взрослый
+  - action: utter_consciousness # Сознание?
+  - or:
+    - intent: unconscious # Без сознания
+    - intent: сonscious # В сознании
+  - action: ???
+
+
+- story: accident_10_11
+  steps:
+  - intent: traffic_accident # После ДТП
+  - action: utter_age # Возраст
+  - or:
+    - intent: child # Ребенок до 18
+    - intent: adult # Взрослый
+  - action: ???
+  

@@ -1,13 +1,65 @@
 version: "3.1"
 
 intents:
-
-
+  - fire
+  - hanging
+  - drowning
+  - electric_shock
+  - rape
+  - foreign_object
+  - beat
+  - knife_wound
+  - injury
+  - bruise
+  - separation
+  - fracture
+  - luxation
+  - traffic_accident
+  - eye
+  - ear
+  - esophagus
+  - breadbasket
+  - nose
+  - throat
+  - respiratory_tract
+  - rectum
+  - urethra
+  - vagina
+  - neck
+  - breast
+  - stomach
+  - back
+  - hand
+  - leg
+  - several_areas
+  - head
+  - finger
+  - toe
+  - jaws
+  - spine
+  - edge
+  - child
+  - adult
+  - unconscious
+  - сonscious
+  - many_on
+  - many_off
 
 responses:
   utter_reason:
   - text: "Причина звонка?"
 
+  utter_age:
+  - text: "Возраст пострадавшего?"
+
+  utter_localization:
+  - text: "Локализация?"
+
+  utter_consciousness:
+  - text: "Сознание?"
+
+  utter_sign_many:
+  - text: "Проставлен признак много (галочка на форме)?"
 
 session_config:
   session_expiration_time: 60
