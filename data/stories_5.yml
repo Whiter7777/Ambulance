@@ -1,3 +1,235 @@
 version: "3.1"
 
 stories:
+
+- story: accident_5_1_1 # Кровотечение
+  steps:
+  - intent: bleeding # Кровотечение
+  - action: utter_age # Возраст?
+  - intent: child # Ребенок до 18
+  - action: utter_consciousness # Сознание?
+  - intent: сonscious # В сознании
+  - action: utter_injury # Травма?
+  - intent: no_injury # Травмы не было
+  - action: utter_where_bleeding # Кровотечение откуда?
+  - or:
+    - intent: from_mouth # Изо рта
+    - intent: tooth_extraction # После удаления зуба
+    - intent: female_genital # Из половых путей женщины
+    - intent: from_nose # Из носа
+    - intent: from_anus # Из заднего прохода
+    - intent: blood_in_urine # Кровь в моче
+    - intent: vomiting_blood # Рвота с кровью
+    - intent: hemoptysis # Кровохаркание
+  - action: ???
+
+- story: accident_5_1_2 # Кровотечение
+  steps:
+  - intent: bleeding # Кровотечение
+  - action: utter_age # Возраст?
+  - intent: adult # Взрослый
+  - action: utter_consciousness # Сознание?
+  - intent: сonscious # В сознании
+  - action: utter_injury # Травма?
+  - intent: no_injury # Травмы не было
+  - action: utter_where_bleeding # Кровотечение откуда?
+  - or:
+    - intent: from_mouth # Изо рта
+    - intent: tooth_extraction # После удаления зуба
+    - intent: female_genital # Из половых путей женщины
+    - intent: from_nose # Из носа
+    - intent: from_anus # Из заднего прохода
+    - intent: blood_in_urine # Кровь в моче
+    - intent: vomiting_blood # Рвота с кровью
+    - intent: from_lower_veins # Из вен нижних конечностей
+    - intent: hemoptysis # Кровохаркание
+  - action: ???
+
+
+- story: accident_5_2_1 # Кровотечение
+  steps:
+  - intent: bleeding # Кровотечение
+  - action: utter_age # Возраст?
+  - intent: child # Ребенок до 18
+  - action: utter_consciousness # Сознание?
+  - intent: unconscious # Без сознания
+  - action: utter_injury # Травма?
+  - intent: no_injury # Травмы не было
+  - action: utter_where_bleeding # Кровотечение откуда?
+  - or:
+    - intent: from_mouth # Изо рта
+    - intent: female_genital # Из половых путей женщины
+    - intent: from_nose # Из носа
+    - intent: from_anus # Из заднего прохода
+    - intent: vomiting_blood # Рвота с кровью
+  - action: ???
+
+- story: accident_5_2_2 # Кровотечение
+  steps:
+  - intent: bleeding # Кровотечение
+  - action: utter_age # Возраст?
+  - intent: adult # Взрослый
+  - action: utter_consciousness # Сознание?
+  - intent: unconscious # Без сознания
+  - action: utter_injury # Травма?
+  - intent: no_injury # Травмы не было
+  - action: utter_where_bleeding # Кровотечение откуда?
+  - or:
+    - intent: from_mouth # Изо рта
+    - intent: female_genital # Из половых путей женщины
+    - intent: from_nose # Из носа
+    - intent: from_anus # Из заднего прохода
+    - intent: vomiting_blood # Рвота с кровью
+    - intent: from_lower_veins # Из вен нижних конечностей
+  - action: ???
+
+- story: accident_5_3 # Кровотечение
+  steps:
+  - intent: bleeding # Кровотечение
+  - action: utter_age # Возраст?
+  - or:
+    - intent: child # Ребенок до 18
+    - intent: adult # Взрослый
+  - action: utter_consciousness # Сознание?
+  - or:
+    - intent: unconscious # Без сознания
+    - intent: сonscious # В сознании
+  - action: utter_injury # Травма?
+  - intent: injury # Травма была
+  - action: utter_cause_of_injury # Причина травмы?
+  - or:
+    - intent: falling_objects # Падение предметов
+    - intent: falling # Падение с высоты
+    - intent: beat # Избили
+    - intent: cut_veins # Порезал вены
+    - intent: gunshot_wound # Огнестрельное ранение
+  - action: ???
+
+- story: accident_5_4 # Кровотечение
+  steps:
+  - intent: bleeding # Кровотечение
+  - action: utter_age # Возраст?
+  - or:
+    - intent: child # Ребенок до 18
+    - intent: adult # Взрослый
+  - action: utter_consciousness # Сознание?
+  - or:
+    - intent: unconscious # Без сознания
+    - intent: сonscious # В сознании
+  - action: utter_injury # Травма?
+  - intent: injury # Травма была
+  - action: utter_cause_of_injury # Причина травмы?
+  - intent: knife_wound # Ножевое ранение
+  - action: utter_localization # Локализация?
+  - or:
+    - intent: neck # Шея
+    - intent: breast # Грудь
+    - intent: stomach # Живот
+    - intent: back # Спина
+    - intent: hand # Рука
+    - intent: leg # Нога
+    - intent: several_areas #Несколько областей
+  - action: ???
+
+- story: accident_5_5 # Кровотечение
+  steps:
+  - intent: bleeding # Кровотечение
+  - action: utter_age # Возраст?
+  - or:
+    - intent: child # Ребенок до 18
+    - intent: adult # Взрослый
+  - action: utter_consciousness # Сознание?
+  - or:
+    - intent: unconscious # Без сознания
+    - intent: сonscious # В сознании
+  - action: utter_injury # Травма?
+  - intent: injury # Травма была
+  - action: utter_cause_of_injury # Причина травмы?
+  - intent: other # Прочие
+  - action: utter_localization # Локализация?
+  - or:
+    - intent: head #Голова
+    - intent: neck # Шея
+    - intent: breast # Грудь
+    - intent: stomach # Живот
+    - intent: back # Спина
+    - intent: hand # Рука
+    - intent: leg # Нога
+    - intent: several_areas #Несколько областей
+    - intent: ear # Ухо
+  - action: ???
+
+- story: accident_5_6 # Кровотечение
+  steps:
+  - intent: bleeding # Кровотечение
+  - action: utter_age # Возраст?
+  - or:
+    - intent: child # Ребенок до 18
+    - intent: adult # Взрослый
+  - action: utter_consciousness # Сознание?
+  - or:
+    - intent: unconscious # Без сознания
+    - intent: сonscious # В сознании
+  - action: utter_injury # Травма?
+  - intent: injury # Травма была
+  - action: utter_cause_of_injury # Причина травмы?
+  - intent: bruise # Ушиб
+  - action: utter_localization # Локализация?
+  - or:
+    - intent: head #Голова
+    - intent: neck # Шея
+    - intent: breast # Грудь
+    - intent: stomach # Живот
+    - intent: back # Спина
+    - intent: hand # Рука
+    - intent: leg # Нога
+    - intent: several_areas #Несколько областей
+  - action: ???
+
+- story: accident_5_7 # Кровотечение
+  steps:
+  - intent: bleeding # Кровотечение
+  - action: utter_age # Возраст?
+  - or:
+    - intent: child # Ребенок до 18
+    - intent: adult # Взрослый
+  - action: utter_consciousness # Сознание?
+  - or:
+    - intent: unconscious # Без сознания
+    - intent: сonscious # В сознании
+  - action: utter_injury # Травма?
+  - intent: injury # Травма была
+  - action: utter_cause_of_injury # Причина травмы?
+  - intent: fracture # Перелом
+  - action: utter_localization # Локализация?
+  - or:
+    - intent: jaws # Челюсти
+    - intent: hand # Рука
+    - intent: leg # Нога
+    - intent: finger # Палец кисти
+    - intent: toe # Палец стопы
+  - action: ???
+
+- story: accident_5_8 # Кровотечение
+  steps:
+  - intent: bleeding # Кровотечение
+  - action: utter_age # Возраст?
+  - or:
+    - intent: child # Ребенок до 18
+    - intent: adult # Взрослый
+  - action: utter_consciousness # Сознание?
+  - or:
+    - intent: unconscious # Без сознания
+    - intent: сonscious # В сознании
+  - action: utter_injury # Травма?
+  - intent: injury # Травма была
+  - action: utter_cause_of_injury # Причина травмы?
+  - intent: separation # Отрыв
+  - action: utter_localization # Локализация?
+  - or:
+    - intent: ear # Ухо
+    - intent: hand # Рука
+    - intent: leg # Нога
+    - intent: finger # Палец кисти
+    - intent: toe # Палец стопы
+  - action: ???

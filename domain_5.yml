@@ -1,13 +1,63 @@
 version: "3.1"
 
 intents:
-
-
+  - bleeding
+  - child
+  - adult
+  - unconscious
+  - сonscious
+  - no_injury
+  - injury
+  - falling_objects
+  - falling
+  - beat
+  - cut_veins
+  - gunshot_wound
+  - knife_wound
+  - other
+  - bruise
+  - separation
+  - fracture
+  - neck
+  - breast
+  - stomach
+  - back
+  - hand
+  - leg
+  - several_areas
+  - head
+  - ear
+  - jaws
+  - finger
+  - toe
+  - from_mouth
+  - tooth_extraction
+  - female_genital
+  - from_nose
+  - from_anus
+  - blood_in_urine
+  - vomiting_blood
+  - hemoptysis
+  - from_lower_veins
 
 responses:
   utter_reason:
   - text: "Причина звонка?"
 
+  utter_injury:
+  - text: "Травма?"
+
+  utter_where_bleeding:
+  - text: "Кровотечение откуда?"
+
+  utter_consciousness:
+  - text: "Сознание?"
+
+  utter_cause_of_injury:
+  - text: "Причина травмы?"
+
+  utter_localization:
+  - text: "Локализация?"
 
 session_config:
   session_expiration_time: 60
