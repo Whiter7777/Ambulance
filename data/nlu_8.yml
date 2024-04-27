@@ -2,10 +2,6 @@ version: "3.1"
 
 nlu:
 
-- intent: call # Поступил звонок
-  examples: |
-    - Поступил звонок
-
 - intent: stomach_ache # Боли в животе
   examples: |
     - Боли в животе
@@ -229,3 +225,49 @@ nlu:
 - intent: oncology # Онкология
   examples: |
     - Онкология
+
+- intent: hands_feet_warm # Руки и ноги теплые
+  examples: |
+    - Теплые
+
+- intent: hands_feet_cold # Руки и ноги холодные
+  examples: |
+    - Холодные
+
+- intent: don't_know # Не знаю
+  examples: |
+    - Не знаю
+
+- intent: below_39 # Ниже 39 градусов
+  examples: |
+    - Ниже 39 градусов
+
+- intent: above_39 # Выше 39 градусов
+  examples: |
+    - Выше 39 градусов
+
+- intent: 1_or_more # 1 раз или более
+  examples: |
+    - Один раз
+    - Много
+    - Не знаю
+
+- intent: no_urinate # Не мочился
+  examples: |
+    - Не мочился
+
+- intent: below_37.5 # Ниже 37.5 градусов
+  examples: |
+    - Ниже 37.5 градусов
+
+- intent: above_37.5 # Выше 37.5градусов
+  examples: |
+    - Выше 37.5 градусов
+
+- intent: below_38 # Ниже 38 градусов
+  examples: |
+    - Ниже 38 градусов
+
+- intent: above_38 # Выше 38 градусов
+  examples: |
+    - Выше 38 градусов

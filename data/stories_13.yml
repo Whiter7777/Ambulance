@@ -6,11 +6,6 @@ stories:
   steps:
   - intent: mining # Заминирование
   - action: utter_age # Возраст
-  - checkpoint: age_checkpoint
-
-- story : mining_continuation
-  steps:
-  - checkpoint: age_checkpoint
   - or:
       - intent: child # Ребенок до 18
       - intent: adult # Взрослый

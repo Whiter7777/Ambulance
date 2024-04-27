@@ -49,7 +49,7 @@ intents:
 responses:
 
   utter_reason:
-    - text: "Причин а звонка?"
+    - text: "Причина звонка?"
 
   utter_why_unconscious:
     - text: "Почему без сознания?"

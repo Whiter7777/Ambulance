@@ -1,13 +1,108 @@
 version: "3.1"
 
 intents:
-
-
+  - stomach_ache
+  - backache
+  - headache
+  - nausea
+  - dies
+  - unconscious
+  - accident
+  - turned_blue
+  - convulsions
+  - choking
+  - temperature
+  - diarrhea
+  - screams
+  - rash
+  - other
+  - paralyzed
+  - suicidal_statements
+  - heartache
+  - high_pressure
+  - heat
+  - edema
+  - earache_child
+  - screams_child
+  - badly
+  - suddenly
+  - pregnancy_on
+  - pregnancy_off
+  - location
+  - flat
+  - child
+  - adult
+  - child_up_to_three
+  - child_up_to_year
+  - up_to_22_weeks
+  - more_than_22_weeks
+  - unconscious
+  - сonscious
+  - breath_on
+  - breath_off
+  - no_injury
+  - injury
+  - bleeding
+  - no_bleeding
+  - convulsions
+  - no_convulsions
+  - allergy
+  - asthma
+  - hypertonic
+  - stenocardia
+  - cerebrovascular
+  - diabetes
+  - epilepsy
+  - unknown
+  - oncology
+  - hands_feet_warm
+  - hands_feet_cold
+  - don't_know
+  - below_39
+  - above_39
+  - 1_or_more
+  - no_urinate
+  - below_37.5
+  - above_37.5
+  - below_38
+  - above_38
 
 responses:
   utter_reason:
   - text: "Причина звонка?"
 
+  utter_age:
+  - text: "Возраст пострадавшего?"
+
+  utter_pregnancy:
+  - text: "Беременность?"
+
+  utter_location:
+  - text: "Где случилось?"
+
+  utter_consciousness:
+  - text: "Сознание"
+
+  utter_gestational_age:
+  - text: "Срок беременности?"
+
+  utter_hands_feet_warm:
+  - text: "Руки и ноги теплые?"
+
+  utter_what_temperature:
+  - text: "Какая температура?"
+
+  utter_bleeding:
+  - text: "Кровотечение?"
+
+  utter_convulsions:
+  - texe: "Судороги?"
+
+  utter_injury:
+  - text: "Травма?"
+
+  utter_how_urinate:
+  - text: "Сколько раз мочился?"
 
 session_config:
   session_expiration_time: 60

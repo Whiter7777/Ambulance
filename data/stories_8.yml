@@ -1,3 +1,181 @@
 version: "3.1"
 
 stories:
+
+- story: accident_8_1
+  steps:
+  - or:
+    - intent: stomach_ache # Боли в животе
+    - intent: backache # Боль в спине
+    - intent: headache # Головная боль
+    - intent: nausea # Тошнота, рвота
+  - action: utter_pregnancy # Беременность ?
+  - intent: pregnancy_on # Беременность есть
+  - action: utter_age # Возраст пострадавшего?
+  - or:
+    - intent: child # Ребенок до 18
+    - intent: adult # Взрослый
+  - action: utter_gestational_age # Срок беременности?
+  - or:
+    - intent: up_to_22_weeks # До 22 недель
+    - intent: more_than_22_weeks # Более 22 недель
+  - action: ???
+
+- story: accident_8_2
+  steps:
+  - or:
+    - intent: dies # Умирает
+    - intent: unconscious # Без сознания
+    - intent: accident # Несчастный случай
+    - intent: turned_blue # Посинел
+    - intent: convulsions # Судороги
+    - intent: choking # Задыхается
+  - action: utter_location # Где случилось?
+  - intent: flat # Квартира
+  - action: utter_age # Возраст пострадавшего?
+  - or:
+    - intent: child_up_to_three # Ребенок до 3-х месяцев
+    - intent: child_up_to_year # Ребенок от 3-х месяцев до 1 года
+  - action: ???
+
+- story: accident_8_3_1
+  steps:
+  - intent: temperature # Температура
+  - checkpoint: continuation_1
+
+- story: accident_8_4_1
+  steps:
+  - intent: diarrhea # Рвота, понос
+  - checkpoint: continuation_1
+
+- story: accident_8_5_1
+  steps:
+  - intent: screams # Кричит, плачет
+  - checkpoint: continuation_1
+
+- story: accident_8_6_1
+  - intent: rash # Сыпь
+  - checkpoint: continuation_1
+
+- story: continuation_1
+  steps:
+  - checkpoint: continuation_1
+  - action: utter_location # Где случилось?
+  - intent: flat # Квартира
+  - action: utter_age # Возраст пострадавшего?
+  - intent: child_up_to_three # Ребенок до 3-х месяцев
+  - action: ???
+
+- story: accident_8_3_2
+  steps:
+  - intent: temperature # Температура
+  - checkpoint: continuation_2
+  - action: utter_hands_feet_warm # Руки и ноги теплые?
+  - or:
+    - intent: hands_feet_warm # Руки и ноги теплые
+    - intent: don't_know # Не знаю
+  - action: utter_what_temperature # Какая температура?
+  - or:
+    - intent: below_39 # Ниже 39 градусов
+    - intent: above_39 # Выше 39 градусов
+  - action: ???
+
+- story: accident_8_3_3
+    steps:
+  - intent: temperature # Температура
+  - checkpoint: continuation_2
+  - action: utter_hands_feet_warm # Руки и ноги теплые?
+  - intent: hands_feet_cold # Руки и ноги холодные
+  - action: ???
+
+- story: accident_8_4_2
+  steps:
+  - intent: diarrhea # Рвота, понос
+  - checkpoint: continuation_2
+  - action: utter_how_urinate # Сколько раз мочился
+  - or:
+    - intent: 1_or_more # 1 раз или более
+    - intent: no_urinate # Не мочился
+  - action: ???
+
+- story: accident_8_5_2
+  steps:
+  - intent: screams # Кричит, плачет
+  - checkpoint: continuation_2
+  - action: utter_what_temperature # Какая температура?
+  - or:
+    - intent: below_37.5 # Ниже 37.5 градусов
+    - intent: above_37.5 # Выше 37.5градусов
+  - action: ???
+
+- story: accident_8_6_2
+  - intent: rash # Сыпь
+  - checkpoint: continuation_2
+  - action: utter_what_temperature # Какая температура?
+  - or:
+    - intent: below_38 # Ниже 38 градусов
+    - intent: above_38 # Выше 38 градусов
+  - action: ???
+
+- story: continuation_2
+  steps:
+  - checkpoint: continuation_2
+  - action: utter_location # Где случилось?
+  - intent: flat # Квартира
+  - action: utter_age # Возраст пострадавшего?
+  - intent: child_up_to_year # Ребенок от 3-х месяцев до 1 года
+
+- story: accident_8_7
+ - intent: other # Прочее
+ - checkpoint: continuation_1
+
+- story: accident_8_8
+  steps:
+  - or:
+    - intent: stomach_ache # Боли в животе
+    - intent: backache # Боль в спине
+    - intent: headache # Головная боль
+    - intent: nausea # Тошнота, рвота
+    - action: utter_pregnancy # Беременность?
+    - intent: pregnancy_off # Беременности нет
+    - checkpoint: continuation_3
+
+- story: accident_8_9
+  steps:
+  - or:
+    - intent: convulsions # Судороги
+    - intent: paralyzed # Парализовало
+    - intent: suicidal_statements # Суицидальные высказывания (алк.)
+    - intent: heartache # Боли в сердце
+    - intent: choking # Задыхается
+    - intent: high_pressure # Высокое давление
+    - intent: heat # Высокая температура
+    - intent: rash # Сыпь
+    - intent: edema # Отек
+    - intent: diarrhea # Рвота, понос
+  - checkpoint: continuation_3
+
+
+- story: continuation_3
+  steps:
+  - checkpoint: continuation_3
+  - action: utter_location # Где случилось?
+  - or:
+    - intent: flat # Квартира
+    - intent: location # Ул., общ. Место\Учр. предпр. , ор
+  - action: utter_age # Возраст пострадавшего?
+  - or:
+    - intent: child # Ребенок до 18
+    - intent: adult # Взрослый
+  - action: ???
+
+- story: accident_8_10
+  steps:
+  - or:
+    - intent: earache_child # Боль в ухе (ребенок)
+    - intent: screams_child # Кричит (ребенок)
+  - action: utter_location # Где случилось?
+  - intent: flat # Квартира
+  - action: utter_age # Возраст пострадавшего?
+  - intent: child # Ребенок до 18
+  - action: ???
