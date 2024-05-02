@@ -268,10 +268,6 @@ nlu:
   examples: |
     - Грудь
 
-- intent: stomach # Живот
-  examples: |
-    - Живот
-
 - intent: back # Спина
   examples: |
     - Спина

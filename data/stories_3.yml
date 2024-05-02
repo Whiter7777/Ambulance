@@ -91,12 +91,12 @@ stories:
     - intent: adult # Взрослый
   - action: utter_gestational_age # Срок беременности?
   - intent: more_than_22_weeks # Более 22 недель
+  - actions: utter_birth # Роды?
+  - or:
+    - intent: first_birth # Первые роды
+    - intent: repeated_births # Повторные роды
   - action: utter_bleeding # Кровотечение?
   - or:
-      - intent: bleeding # Кровотечение: Да
-      - intent: no_bleeding # Кровотечение: Нет
-  - action: utter_convulsions # Судороги?
-  - or:
-      - intent: convulsions # Судороги: Да
-      - intent: no_convulsions # Судороги: Нет
+    - intent: bleeding # Кровотечение: Да
+    - intent: no_bleeding # Кровотечение: Нет
   - action: ???

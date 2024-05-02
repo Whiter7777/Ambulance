@@ -35,10 +35,6 @@ nlu:
   examples: |
     - Посинел
 
-- intent: convulsions # Судороги
-  examples: |
-    - Судороги
-
 - intent: choking # Задыхается
   examples: |
     - Задыхается
@@ -271,3 +267,192 @@ nlu:
 - intent: above_38 # Выше 38 градусов
   examples: |
     - Выше 38 градусов
+
+- intent: many_on # Проставлен признак много (галочка на форме)
+  examples: |
+    - Проставлен признак много
+
+- intent: many_off # Не проставлен признак много (галочка на форме)
+  examples: |
+    - Не проставлен признак много
+
+- intent: falling_objects # Падение предметов
+  examples: |
+    - Падение предметов
+
+- intent: falling # Падение с высоты
+  examples: |
+    - Падение с высоты
+
+- intent: beat # Избили
+  examples: |
+    - Избили
+
+- intent: cut_veins # Порезал вены
+  examples: |
+    - Порезал вены
+
+- intent: gunshot_wound # Огнестрельное ранение
+  examples: |
+    - Огнестрельное ранение
+
+- intent: traffic_accident # После ДТП
+  examples: |
+    - После ДТП
+
+- intent: knife_wound # Ножевое ранение
+  examples: |
+    - Ножевое ранение
+
+- intent: other # Прочие
+  examples: |
+    - Прочие
+
+- intent: bruise # Ушиб
+  examples: |
+    - Ушиб
+
+- intent: separation # Отрыв
+  examples: |
+    - Отрыв
+
+- intent: fracture # Перелом
+  examples: |
+    - Перелом
+
+- intent: luxation # Вывих
+  examples: |
+    - Вывих
+
+- intent: neck # Шея
+  examples: |
+    - Шея
+
+- intent: breast # Грудь
+  examples: |
+    - Грудь
+
+- intent: stomach # Живот
+  examples: |
+    - Живот
+
+- intent: back # Спина
+  examples: |
+    - Спина
+
+- intent: hand # Рука
+  examples: |
+    - Рука
+
+- intent: leg # Нога
+  examples: |
+    - Нога
+
+- intent: several_areas #Несколько областей
+  examples: |
+    - Несколько областей
+
+- intent: head #Голова
+  examples: |
+    - Голова
+
+- intent: ear # Ухо
+  examples: |
+    - Ухо
+
+- intent: finger # Палец кисти
+  examples: |
+    - Палец кисти
+
+- intent: toe # Палец стопы
+  examples: |
+    - Палец стопы
+
+- intent: jaws # Челюсти
+  examples: |
+    - Челюсти
+
+- intent: spine # Позвоночник
+  examples: |
+    - Позвоночник
+
+- intent: edge # Ребро
+  examples: |
+    - Ребро
+
+- intent: from_mouth # Изо рта
+  examples: |
+    - Изо рта
+
+- intent: tooth_extraction # После удаления зуба
+  examples: |
+    - После удаления зуба
+
+- intent: female_genital # Из половых путей женщины
+  examples: |
+    - Из половых путей женщины
+
+- intent: from_nose # Из носа
+  examples: |
+    - Из носа
+
+- intent: from_anus # Из заднего прохода
+  examples: |
+    - Из заднего прохода
+
+- intent: blood_in_urine # Кровь в моче
+  examples: |
+    - Кровь в моче
+
+- intent: vomiting_blood # Рвота с кровью
+  examples: |
+    - Рвота с кровью
+
+- intent: hemoptysis # Кровохаркание
+  examples: |
+    - Кровохаркание
+
+- intent: stomach_ache # Боли в животе
+  examples: |
+    - Боли в животе
+
+- intent: nausea # Тошнота, рвота
+  examples: |
+    - Тошнота
+    - Рвота
+
+- intent: headache # Головная боль
+  examples: |
+    - Головная боль
+
+- intent: backache # Боль в спине
+  examples: |
+    - Боль в спине
+
+- intent: labor_pains # Схватки
+  examples: |
+    - Схватки
+
+- intent: gave_birth # Родила
+  examples: |
+    - Родила
+
+- intent: giving_birth_now # Рожает
+  examples: |
+    - Рожает
+
+- intent: first_birth # Первые роды
+  examples: |
+    - Первые роды
+
+- intent: repeated_births # Повторные роды
+  examples: |
+    - Повторные роды
+
+- intent: breath_on # Дыхание есть
+  examples: |
+    - Дыхание есть
+
+- intent: breath_off # Дыхания нет
+  examples: |
+    - Дыхания нет

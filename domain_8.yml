@@ -104,6 +104,30 @@ responses:
   utter_how_urinate:
   - text: "Сколько раз мочился?"
 
+  utter_sign_many:
+  - text: "Проставлен признак много (галочка на форме)?"
+
+  utter_cause_of_injury:
+  - text: "Причина травмы?"
+
+  utter_localization:
+  - text: "Локализация?"
+
+  utter_where_bleeding:
+  - text: "Кровотечение откуда?"
+
+  utter_complaint:
+  - text: "Жалобы?"
+
+  utter_birth:
+  - text: "Роды?"
+
+  utter_breath:
+  - text: "Дыхание?"
+
+  utter_what sick:
+  - text: "Чем болеет?"
+
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true

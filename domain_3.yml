@@ -21,7 +21,6 @@ intents:
   - convulsions
   - no_convulsions
 
-
 responses:
   utter_reason:
   - text: "Причина звонка?"
@@ -42,7 +41,10 @@ responses:
   - text: "Кровотечение?"
 
   utter_convulsions:
-  - texe: "Судороги?"
+  - text: "Судороги?"
+
+  utter_birth:
+  - text: "Роды?"
 
 session_config:
   session_expiration_time: 60

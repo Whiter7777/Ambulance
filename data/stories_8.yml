@@ -155,7 +155,6 @@ stories:
     - intent: diarrhea # Рвота, понос
   - checkpoint: continuation_3
 
-
 - story: continuation_3
   steps:
   - checkpoint: continuation_3
@@ -178,4 +177,866 @@ stories:
   - intent: flat # Квартира
   - action: utter_age # Возраст пострадавшего?
   - intent: child # Ребенок до 18
+  - action: ???
+
+- story: accident_8_11
+  steps:
+  - or:
+    - intent: badly # Плохо
+    - intent: suddenly # Внезапно
+  - action: utter_location # Где случилось?
+  - intent: flat # Квартира
+  - action: utter_age # Возраст пострадавшего?
+  - intent: child # Ребенок до 18
+  - action: utter_consciousness # Сознание
+  - intent: unconscious # Без сознания
+  - action: ???
+
+- story: continuation_4
+  steps:
+  - or:
+    - intent: badly # Плохо
+    - intent: suddenly # Внезапно
+  - action: utter_location # Где случилось?
+  - intent: flat # Квартира
+  - action: utter_age # Возраст пострадавшего?
+  - intent: child # Ребенок до 18
+  - action: utter_consciousness # Сознание
+  - intent: сonscious # В сознании
+  - checkpoint: continuation_4
+
+- story: accident_8_12
+  steps:
+  - checkpoint: continuation_4
+  - action: utter_injury # Травма?
+  - intent: no_injury # Травмы не было
+  - action: utter_bleeding # Кровотечение?
+  - intent: no_bleeding # Кровотечение: Нет
+  - action: utter_pregnancy # Беременность?
+  - intent: pregnancy_off # Беременности нет
+  - action: ???
+
+- story: accident_8_13
+  steps:
+  - checkpoint: continuation_4
+  - action: utter_injury # Травма?
+  - intent: injury # Травма была
+  - action: utter_sign_many # Проставлен признак много (галочка на форме)?
+  - intent: many_off # Не проставлен признак много (галочка на форме)
+  - action: utter_cause_of_injury # Причина травмы?
+  - or:
+    - intent: falling_objects # Падение предметов
+    - intent: falling # Падение с высоты
+    - intent: beat # Избили
+    - intent: cut_veins # Порезал вены
+    - intent: gunshot_wound # Огнестрельное ранение
+    - intent: traffic_accident # После ДТП
+  - action: ???
+
+- story: accident_8_14
+  steps:
+  - checkpoint: continuation_4
+  - action: utter_injury # Травма?
+  - intent: injury # Травма была
+  - action: utter_sign_many # Проставлен признак много (галочка на форме)?
+  - intent: many_on # Проставлен признак много (галочка на форме)
+  - action: utter_cause_of_injury # Причина травмы?
+  - or:
+    - intent: beat # Избили
+    - intent: knife_wound # Ножевое ранение
+    - intent: gunshot_wound # Огнестрельное ранение
+    - intent: other # Прочие
+    - intent: falling_objects # Падение предметов
+    - intent: traffic_accident # После ДТП
+  - action: ???
+
+- story: accident_8_15
+  steps:
+  - checkpoint: continuation_4
+  - action: utter_injury # Травма?
+  - intent: injury # Травма была
+  - action: utter_sign_many # Проставлен признак много (галочка на форме)?
+  - intent: many_off # Не проставлен признак много (галочка на форме)
+  - action: utter_cause_of_injury # Причина травмы?
+  - intent: other # Прочие
+  - action: utter_localization # Локализация
+  - or:
+    - intent: head #Голова
+    - intent: neck # Шея
+    - intent: breast # Грудь
+    - intent: stomach # Живот
+    - intent: back # Спина
+    - intent: hand # Рука
+    - intent: leg # Нога
+    - intent: several_areas #Несколько областей
+    - intent: ear # Ухо
+  - action: ???
+
+- story: accident_8_16
+  steps:
+  - checkpoint: continuation_4
+  - action: utter_injury # Травма?
+  - intent: injury # Травма была
+  - action: utter_sign_many # Проставлен признак много (галочка на форме)?
+  - intent: many_off # Не проставлен признак много (галочка на форме)
+  - action: utter_cause_of_injury # Причина травмы?
+  - intent: bruise # Ушиб
+  - action: utter_localization # Локализация
+  - or:
+    - intent: head #Голова
+    - intent: neck # Шея
+    - intent: breast # Грудь
+    - intent: stomach # Живот
+    - intent: back # Спина
+    - intent: hand # Рука
+    - intent: leg # Нога
+    - intent: several_areas #Несколько областей
+  - action: ???
+
+- story: accident_8_17
+  steps:
+  - checkpoint: continuation_4
+  - action: utter_injury # Травма?
+  - intent: injury # Травма была
+  - action: utter_sign_many # Проставлен признак много (галочка на форме)?
+  - intent: many_off # Не проставлен признак много (галочка на форме)
+  - action: utter_cause_of_injury # Причина травмы?
+  - intent: luxation # Вывих
+  - action: utter_localization # Локализация
+  - or:
+    - intent: neck # Шея
+    - intent: spine # Позвоночник
+    - intent: hand # Рука
+    - intent: leg # Нога
+    - intent: jaws # Челюсти
+    - intent: finger # Палец кисти
+    - intent: toe # Палец стопы
+  - action: ???
+
+- story: accident_8_18
+  steps:
+  - checkpoint: continuation_4
+  - action: utter_injury # Травма?
+  - intent: injury # Травма была
+  - action: utter_sign_many # Проставлен признак много (галочка на форме)?
+  - intent: many_off # Не проставлен признак много (галочка на форме)
+  - action: utter_cause_of_injury # Причина травмы?
+  - intent: fracture # Перелом
+  - action: utter_localization # Локализация
+  - or:
+    - intent: jaws # Челюсти
+    - intent: spine # Позвоночник
+    - intent: edge # Ребро
+    - intent: hand # Рука
+    - intent: leg # Нога
+    - intent: finger # Палец кисти
+    - intent: toe # Палец стопы
+  - action: ???
+
+- story: accident_8_19
+  steps:
+  - checkpoint: continuation_4
+  - action: utter_injury # Травма?
+  - intent: injury # Травма была
+  - action: utter_sign_many # Проставлен признак много (галочка на форме)?
+  - intent: many_off # Не проставлен признак много (галочка на форме)
+  - action: utter_cause_of_injury # Причина травмы?
+  - intent: knife_wound # Ножевое ранение
+  - action: utter_localization # Локализация
+  - or:
+    - intent: neck # Шея
+    - intent: breast # Грудь
+    - intent: stomach # Живот
+    - intent: back # Спина
+    - intent: hand # Рука
+    - intent: leg # Нога
+    - intent: several_areas #Несколько областей
+  - action: ???
+
+- story: accident_8_20
+  steps:
+  - checkpoint: continuation_4
+  - action: utter_injury # Травма?
+  - intent: injury # Травма была
+  - action: utter_sign_many # Проставлен признак много (галочка на форме)?
+  - intent: many_off # Не проставлен признак много (галочка на форме)
+  - action: utter_cause_of_injury # Причина травмы?
+  - intent: separation # Отрыв
+  - action: utter_localization # Локализация
+  - or:
+    - intent: ear # Ухо
+    - intent: hand # Рука
+    - intent: leg # Нога
+    - intent: finger # Палец кисти
+    - intent: toe # Палец стопы
+  - action: ???
+
+- story: accident_8_21
+  steps:
+  - checkpoint: continuation_4
+  - action: utter_injury # Травма?
+  - intent: no_injury # Травмы не было
+  - action: utter_bleeding # Кровотечение?
+  - intent: bleeding # Кровотечение: Да
+  - action: utter_where_bleeding # Кровотечение откуда?
+  - or:
+    - intent: from_mouth # Изо рта
+    - intent: tooth_extraction # После удаления зуба
+    - intent: female_genital # Из половых путей женщины
+    - intent: from_nose # Из носа
+    - intent: from_anus # Из заднего прохода
+    - intent: blood_in_urine # Кровь в моче
+    - intent: vomiting_blood # Рвота с кровью
+    - intent: hemoptysis # Кровохаркание
+  - action: ???
+
+- story: accident_8_22
+  steps:
+  - checkpoint: continuation_4
+  - action: utter_injury # Травма?
+  - intent: no_injury # Травмы не было
+  - action: utter_bleeding # Кровотечение?
+  - intent: no_bleeding # Кровотечение: Нет
+  - action: utter_pregnancy # Беременность?
+  - intent: pregnancy_on # Беременность есть
+  - action: utter_gestational_age # Срок беременности
+  - intent: up_to_22_weeks # До 22 недель
+  - action: utter_complaint # Жалобы
+  - or:
+    - intent: stomach_ache # Боли в животе
+    - intent: nausea # Тошнота, рвота
+    - intent: headache # Головная боль
+    - intent: backache # Боль в спине
+    - intent: labor_pains # Схватки
+  - action: ???
+
+- story: accident_8_23
+  steps:
+  - checkpoint: continuation_4
+  - action: utter_injury # Травма?
+  - intent: no_injury # Травмы не было
+  - action: utter_bleeding # Кровотечение?
+  - intent: no_bleeding # Кровотечение: Нет
+  - action: utter_pregnancy # Беременность?
+  - intent: pregnancy_on # Беременность есть
+  - action: utter_gestational_age # Срок беременности
+  - intent: more_than_22_weeks # Более 22 недель
+  - action: utter_complaint # Жалобы
+  - or:
+    - intent: stomach_ache # Боли в животе
+    - intent: nausea # Тошнота, рвота
+    - intent: headache # Головная боль
+    - intent: backache # Боль в спине
+    - intent: gave_birth # Родила
+  - action: ???
+
+- story: accident_8_24
+  steps:
+  - checkpoint: continuation_4
+  - action: utter_injury # Травма?
+  - intent: no_injury # Травмы не было
+  - action: utter_bleeding # Кровотечение?
+  - intent: no_bleeding # Кровотечение: Нет
+  - action: utter_pregnancy # Беременность?
+  - intent: pregnancy_on # Беременность есть
+  - action: utter_gestational_age # Срок беременности
+  - intent: more_than_22_weeks # Более 22 недель
+  - action: utter_complaint # Жалобы
+  - or:
+    - intent: giving_birth_now # Рожает
+    - intent: labor_pains # Схватки
+  - action: utter_birth # Роды
+  - or:
+    - intent: first_birth # Первые роды
+    - intent: repeated_births # Повторные роды
+  - action: ???
+
+- story: continuation_5
+  steps:
+  - or:
+    - intent: badly # Плохо
+    - intent: suddenly # Внезапно
+  - action: utter_location # Где случилось?
+  - intent: flat # Квартира
+  - action: utter_age # Возраст пострадавшего?
+  - intent: adult # Взрослый
+  - action: utter_consciousness # Сознание
+  - checkpoint: continuation_5
+
+- story: accident_8_25
+  steps:
+  - checkpoint: continuation_5
+  - intent: сonscious # В сознании
+  - action: utter_injury # Травма?
+  - intent: no_injury # Травмы не было
+  - action: utter_bleeding # Кровотечение?
+  - intent: no_bleeding # Кровотечение: Нет
+  - action: utter_pregnancy # Беременность?
+  - intent: pregnancy_off # Беременности нет
+  - action: ???
+
+- story: accident_8_26
+  steps:
+  - checkpoint: continuation_5
+  - intent: сonscious # В сознании
+  - action: utter_injury # Травма?
+  - intent: injury # Травма была
+  - action: utter_sign_many # Проставлен признак много (галочка на форме)?
+  - intent: many_off # Не проставлен признак много (галочка на форме)
+  - action: utter_cause_of_injury # Причина травмы?
+  - or:
+    - intent: falling_objects # Падение предметов
+    - intent: falling # Падение с высоты
+    - intent: beat # Избили
+    - intent: cut_veins # Порезал вены
+    - intent: gunshot_wound # Огнестрельное ранение
+    - intent: traffic_accident # После ДТП
+  - action: ???
+
+- story: accident_8_27
+  steps:
+  - checkpoint: continuation_5
+  - intent: сonscious # В сознании
+  - action: utter_injury # Травма?
+  - intent: injury # Травма была
+  - action: utter_sign_many # Проставлен признак много (галочка на форме)?
+  - intent: many_on # Проставлен признак много (галочка на форме)
+  - action: utter_cause_of_injury # Причина травмы?
+  - or:
+    - intent: beat # Избили
+    - intent: knife_wound # Ножевое ранение
+    - intent: gunshot_wound # Огнестрельное ранение
+    - intent: other # Прочие
+    - intent: falling_objects # Падение предметов
+    - intent: traffic_accident # После ДТП
+  - action: ???
+
+- story: accident_8_28
+  steps:
+  - checkpoint: continuation_5
+  - intent: сonscious # В сознании
+  - action: utter_injury # Травма?
+  - intent: injury # Травма была
+  - action: utter_sign_many # Проставлен признак много (галочка на форме)?
+  - intent: many_off # Не проставлен признак много (галочка на форме)
+  - action: utter_cause_of_injury # Причина травмы?
+  - intent: other # Прочие
+  - action: utter_localization # Локализация
+  - or:
+    - intent: head #Голова
+    - intent: neck # Шея
+    - intent: breast # Грудь
+    - intent: stomach # Живот
+    - intent: back # Спина
+    - intent: hand # Рука
+    - intent: leg # Нога
+    - intent: several_areas #Несколько областей
+    - intent: ear # Ухо
+  - action: ???
+
+- story: accident_8_29
+  steps:
+  - checkpoint: continuation_5
+  - intent: сonscious # В сознании
+  - action: utter_injury # Травма?
+  - intent: injury # Травма была
+  - action: utter_sign_many # Проставлен признак много (галочка на форме)?
+  - intent: many_off # Не проставлен признак много (галочка на форме)
+  - action: utter_cause_of_injury # Причина травмы?
+  - intent: bruise # Ушиб
+  - action: utter_localization # Локализация
+  - or:
+    - intent: head #Голова
+    - intent: neck # Шея
+    - intent: breast # Грудь
+    - intent: stomach # Живот
+    - intent: back # Спина
+    - intent: hand # Рука
+    - intent: leg # Нога
+    - intent: several_areas #Несколько областей
+  - action: ???
+
+- story: accident_8_30
+  steps:
+  - checkpoint: continuation_5
+  - intent: сonscious # В сознании
+  - action: utter_injury # Травма?
+  - intent: injury # Травма была
+  - action: utter_sign_many # Проставлен признак много (галочка на форме)?
+  - intent: many_off # Не проставлен признак много (галочка на форме)
+  - action: utter_cause_of_injury # Причина травмы?
+  - intent: luxation # Вывих
+  - action: utter_localization # Локализация
+  - or:
+    - intent: neck # Шея
+    - intent: spine # Позвоночник
+    - intent: hand # Рука
+    - intent: leg # Нога
+    - intent: jaws # Челюсти
+    - intent: finger # Палец кисти
+    - intent: toe # Палец стопы
+  - action: ???
+
+- story: accident_8_31
+  steps:
+  - checkpoint: continuation_5
+  - intent: сonscious # В сознании
+  - action: utter_injury # Травма?
+  - intent: injury # Травма была
+  - action: utter_sign_many # Проставлен признак много (галочка на форме)?
+  - intent: many_off # Не проставлен признак много (галочка на форме)
+  - action: utter_cause_of_injury # Причина травмы?
+  - intent: fracture # Перелом
+  - action: utter_localization # Локализация
+  - or:
+    - intent: jaws # Челюсти
+    - intent: spine # Позвоночник
+    - intent: edge # Ребро
+    - intent: hand # Рука
+    - intent: leg # Нога
+    - intent: finger # Палец кисти
+    - intent: toe # Палец стопы
+  - action: ???
+
+- story: accident_8_32
+  steps:
+  - checkpoint: continuation_5
+  - intent: сonscious # В сознании
+  - action: utter_injury # Травма?
+  - intent: injury # Травма была
+  - action: utter_sign_many # Проставлен признак много (галочка на форме)?
+  - intent: many_off # Не проставлен признак много (галочка на форме)
+  - action: utter_cause_of_injury # Причина травмы?
+  - intent: knife_wound # Ножевое ранение
+  - action: utter_localization # Локализация
+  - or:
+    - intent: neck # Шея
+    - intent: breast # Грудь
+    - intent: stomach # Живот
+    - intent: back # Спина
+    - intent: hand # Рука
+    - intent: leg # Нога
+    - intent: several_areas #Несколько областей
+  - action: ???
+
+- story: accident_8_33
+  steps:
+  - checkpoint: continuation_5
+  - intent: сonscious # В сознании
+  - action: utter_injury # Травма?
+  - intent: injury # Травма была
+  - action: utter_sign_many # Проставлен признак много (галочка на форме)?
+  - intent: many_off # Не проставлен признак много (галочка на форме)
+  - action: utter_cause_of_injury # Причина травмы?
+  - intent: separation # Отрыв
+  - action: utter_localization # Локализация
+  - or:
+    - intent: ear # Ухо
+    - intent: hand # Рука
+    - intent: leg # Нога
+    - intent: finger # Палец кисти
+    - intent: toe # Палец стопы
+  - action: ???
+
+- story: accident_8_33
+  steps:
+  - checkpoint: continuation_5
+  - intent: сonscious # В сознании
+  - action: utter_injury # Травма?
+  - intent: no_injury # Травмы не было
+  - action: utter_bleeding # Кровотечение?
+  - intent: bleeding # Кровотечение: Да
+  - action: utter_where_bleeding # Кровотечение откуда?
+  - or:
+    - intent: from_mouth # Изо рта
+    - intent: tooth_extraction # После удаления зуба
+    - intent: female_genital # Из половых путей женщины
+    - intent: from_nose # Из носа
+    - intent: from_anus # Из заднего прохода
+    - intent: blood_in_urine # Кровь в моче
+    - intent: vomiting_blood # Рвота с кровью
+    - intent: hemoptysis # Кровохаркание
+  - action: ???
+
+- story: accident_8_34
+  steps:
+  - checkpoint: continuation_5
+  - intent: сonscious # В сознании
+  - action: utter_injury # Травма?
+  - intent: no_injury # Травмы не было
+  - action: utter_bleeding # Кровотечение?
+  - intent: no_bleeding # Кровотечение: Нет
+  - action: utter_pregnancy # Беременность?
+  - intent: pregnancy_on # Беременность есть
+  - action: utter_gestational_age # Срок беременности
+  - intent: up_to_22_weeks # До 22 недель
+  - action: utter_complaint # Жалобы
+  - or:
+    - intent: stomach_ache # Боли в животе
+    - intent: nausea # Тошнота, рвота
+    - intent: headache # Головная боль
+    - intent: backache # Боль в спине
+    - intent: labor_pains # Схватки
+  - action: ???
+
+- story: accident_8_35
+  steps:
+  - checkpoint: continuation_5
+  - intent: сonscious # В сознании
+  - action: utter_injury # Травма?
+  - intent: no_injury # Травмы не было
+  - action: utter_bleeding # Кровотечение?
+  - intent: no_bleeding # Кровотечение: Нет
+  - action: utter_pregnancy # Беременность?
+  - intent: pregnancy_on # Беременность есть
+  - action: utter_gestational_age # Срок беременности
+  - intent: more_than_22_weeks # Более 22 недель
+  - action: utter_complaint # Жалобы
+  - or:
+    - intent: stomach_ache # Боли в животе
+    - intent: nausea # Тошнота, рвота
+    - intent: headache # Головная боль
+    - intent: backache # Боль в спине
+    - intent: gave_birth # Родила
+  - action: ???
+
+- story: accident_8_36
+  steps:
+  - checkpoint: continuation_5
+  - intent: сonscious # В сознании
+  - action: utter_injury # Травма?
+  - intent: no_injury # Травмы не было
+  - action: utter_bleeding # Кровотечение?
+  - intent: no_bleeding # Кровотечение: Нет
+  - action: utter_pregnancy # Беременность?
+  - intent: pregnancy_on # Беременность есть
+  - action: utter_gestational_age # Срок беременности
+  - intent: more_than_22_weeks # Более 22 недель
+  - action: utter_complaint # Жалобы
+  - or:
+    - intent: giving_birth_now # Рожает
+    - intent: labor_pains # Схватки
+  - action: utter_birth # Роды
+  - or:
+    - intent: first_birth # Первые роды
+    - intent: repeated_births # Повторные роды
+  - action: ???
+
+- story: accident_8_37
+  steps:
+  - checkpoint: continuation_5
+  - intent: unconscious # Без сознания
+  - action: utter_breath # Дыхание?
+  - intent: breath_off # Дыхания нет
+  - action: ???
+
+- story: accident_8_38
+  steps:
+  - checkpoint: continuation_5
+  - intent: unconscious # Без сознания
+  - action: utter_breath # Дыхание?
+  - intent: breath_on # Дыхание есть
+  - action: utter_convulsions # Судороги?
+  - intent: convulsions # Судороги: Да
+  - action: ???
+
+- story: accident_8_39
+  steps:
+  - checkpoint: continuation_5
+  - intent: unconscious # Без сознания
+  - action: utter_breath # Дыхание?
+  - intent: breath_on # Дыхание есть
+  - action: utter_convulsions # Судороги?
+  - intent: no_convulsions # Судороги: Нет
+  - action: utter_what sick # Чем болеет?
+  - or:
+    - intent: allergy # Аллергия
+    - intent: asthma # Астма
+    - intent: hypertonic # Гипертоническая болезнь
+    - intent: stenocardia # ОИМ, Стенокардия
+    - intent: cerebrovascular  # После ОНМК
+    - intent: diabetes # Сахарный диабет
+    - intent: epilepsy # Эпилепсия
+    - intent: unknown # Нет данных
+    - intent: oncology # Онкология
+  - action: ???
+
+- story: accident_8_40
+  steps:
+  - or:
+    - intent: badly # Плохо
+    - intent: suddenly # Внезапно
+  - action: utter_location # Где случилось?
+  - intent: location # Ул., общ. Место\Учр. предпр. , ор
+  - action: utter_age # Возраст пострадавшего?
+  - intent: child # Ребенок до 18
+  - action: ???
+
+- story: continuation_6
+  steps:
+  - or:
+    - intent: badly # Плохо
+    - intent: suddenly # Внезапно
+  - action: utter_location # Где случилось?
+  - intent: location # Ул., общ. Место\Учр. предпр., ор
+  - action: utter_age # Возраст пострадавшего?
+  - intent: adult # Взрослый
+  - action: utter_consciousness # Сознание
+  - checkpoint: continuation_6
+
+- story: accident_8_41
+  steps:
+  - checkpoint: continuation_6
+  - intent: unconscious # Без сознания
+  - action: utter_breath # Дыхание?
+  - or:
+    - intent: breath_on # Дыхание есть
+    - intent: breath_off # Дыхания нет
+  - action: ???
+
+- story: accident_8_42
+  steps:
+  - checkpoint: continuation_6
+  - intent: сonscious # В сознании
+  - action: utter_injury # Травма?
+  - intent: injury # Травма была
+  - action: utter_sign_many # Проставлен признак много (галочка на форме)?
+  - intent: many_off # Не проставлен признак много (галочка на форме)
+  - action: utter_cause_of_injury # Причина травмы?
+  - or:
+    - intent: falling_objects # Падение предметов
+    - intent: falling # Падение с высоты
+    - intent: beat # Избили
+    - intent: cut_veins # Порезал вены
+    - intent: gunshot_wound # Огнестрельное ранение
+    - intent: traffic_accident # После ДТП
+  - action: ???
+
+- story: accident_8_42
+  steps:
+  - checkpoint: continuation_6
+  - intent: сonscious # В сознании
+  - action: utter_injury # Травма?
+  - intent: injury # Травма была
+  - action: utter_sign_many # Проставлен признак много (галочка на форме)?
+  - intent: many_on # Проставлен признак много (галочка на форме)
+  - action: utter_cause_of_injury # Причина травмы?
+  - or:
+    - intent: beat # Избили
+    - intent: knife_wound # Ножевое ранение
+    - intent: gunshot_wound # Огнестрельное ранение
+    - intent: other # Прочие
+    - intent: falling_objects # Падение предметов
+    - intent: traffic_accident # После ДТП
+  - action: ???
+
+- story: accident_8_44
+  steps:
+  - checkpoint: continuation_6
+  - intent: сonscious # В сознании
+  - action: utter_injury # Травма?
+  - intent: injury # Травма была
+  - action: utter_sign_many # Проставлен признак много (галочка на форме)?
+  - intent: many_off # Не проставлен признак много (галочка на форме)
+  - action: utter_cause_of_injury # Причина травмы?
+  - intent: other # Прочие
+  - action: utter_localization # Локализация
+  - or:
+    - intent: head #Голова
+    - intent: neck # Шея
+    - intent: breast # Грудь
+    - intent: stomach # Живот
+    - intent: back # Спина
+    - intent: hand # Рука
+    - intent: leg # Нога
+    - intent: several_areas #Несколько областей
+    - intent: ear # Ухо
+  - action: ???
+
+- story: accident_8_45
+  steps:
+  - checkpoint: continuation_6
+  - intent: сonscious # В сознании
+  - action: utter_injury # Травма?
+  - intent: injury # Травма была
+  - action: utter_sign_many # Проставлен признак много (галочка на форме)?
+  - intent: many_off # Не проставлен признак много (галочка на форме)
+  - action: utter_cause_of_injury # Причина травмы?
+  - intent: bruise # Ушиб
+  - action: utter_localization # Локализация
+  - or:
+    - intent: head #Голова
+    - intent: neck # Шея
+    - intent: breast # Грудь
+    - intent: stomach # Живот
+    - intent: back # Спина
+    - intent: hand # Рука
+    - intent: leg # Нога
+    - intent: several_areas #Несколько областей
+  - action: ???
+
+- story: accident_8_46
+  steps:
+  - checkpoint: continuation_6
+  - intent: сonscious # В сознании
+  - action: utter_injury # Травма?
+  - intent: injury # Травма была
+  - action: utter_sign_many # Проставлен признак много (галочка на форме)?
+  - intent: many_off # Не проставлен признак много (галочка на форме)
+  - action: utter_cause_of_injury # Причина травмы?
+  - intent: luxation # Вывих
+  - action: utter_localization # Локализация
+  - or:
+    - intent: neck # Шея
+    - intent: spine # Позвоночник
+    - intent: hand # Рука
+    - intent: leg # Нога
+    - intent: jaws # Челюсти
+    - intent: finger # Палец кисти
+    - intent: toe # Палец стопы
+  - action: ???
+
+- story: accident_8_47
+  steps:
+  - checkpoint: continuation_6
+  - intent: сonscious # В сознании
+  - action: utter_injury # Травма?
+  - intent: injury # Травма была
+  - action: utter_sign_many # Проставлен признак много (галочка на форме)?
+  - intent: many_off # Не проставлен признак много (галочка на форме)
+  - action: utter_cause_of_injury # Причина травмы?
+  - intent: fracture # Перелом
+  - action: utter_localization # Локализация
+  - or:
+    - intent: jaws # Челюсти
+    - intent: spine # Позвоночник
+    - intent: edge # Ребро
+    - intent: hand # Рука
+    - intent: leg # Нога
+    - intent: finger # Палец кисти
+    - intent: toe # Палец стопы
+  - action: ???
+
+- story: accident_8_48
+  steps:
+  - checkpoint: continuation_6
+  - intent: сonscious # В сознании
+  - action: utter_injury # Травма?
+  - intent: injury # Травма была
+  - action: utter_sign_many # Проставлен признак много (галочка на форме)?
+  - intent: many_off # Не проставлен признак много (галочка на форме)
+  - action: utter_cause_of_injury # Причина травмы?
+  - intent: knife_wound # Ножевое ранение
+  - action: utter_localization # Локализация
+  - or:
+    - intent: neck # Шея
+    - intent: breast # Грудь
+    - intent: stomach # Живот
+    - intent: back # Спина
+    - intent: hand # Рука
+    - intent: leg # Нога
+    - intent: several_areas #Несколько областей
+  - action: ???
+
+- story: accident_8_49
+  steps:
+  - checkpoint: continuation_6
+  - intent: сonscious # В сознании
+  - action: utter_injury # Травма?
+  - intent: injury # Травма была
+  - action: utter_sign_many # Проставлен признак много (галочка на форме)?
+  - intent: many_off # Не проставлен признак много (галочка на форме)
+  - action: utter_cause_of_injury # Причина травмы?
+  - intent: separation # Отрыв
+  - action: utter_localization # Локализация
+  - or:
+    - intent: ear # Ухо
+    - intent: hand # Рука
+    - intent: leg # Нога
+    - intent: finger # Палец кисти
+    - intent: toe # Палец стопы
+  - action: ???
+
+- story: accident_8_50
+  steps:
+  - checkpoint: continuation_6
+  - intent: сonscious # В сознании
+  - action: utter_injury # Травма?
+  - intent: no_injury # Травмы не было
+  - action: utter_bleeding # Кровотечение?
+  - intent: bleeding # Кровотечение: Да
+  - action: utter_where_bleeding # Кровотечение откуда?
+  - or:
+    - intent: from_mouth # Изо рта
+    - intent: tooth_extraction # После удаления зуба
+    - intent: female_genital # Из половых путей женщины
+    - intent: from_nose # Из носа
+    - intent: from_anus # Из заднего прохода
+    - intent: blood_in_urine # Кровь в моче
+    - intent: vomiting_blood # Рвота с кровью
+    - intent: hemoptysis # Кровохаркание
+  - action: ???
+
+- story: accident_8_51
+  steps:
+  - checkpoint: continuation_6
+  - intent: сonscious # В сознании
+  - action: utter_injury # Травма?
+  - intent: no_injury # Травмы не было
+  - action: utter_bleeding # Кровотечение?
+  - intent: no_bleeding # Кровотечение: Нет
+  - action: utter_pregnancy # Беременность?
+  - intent: pregnancy_on # Беременность есть
+  - action: utter_gestational_age # Срок беременности
+  - intent: up_to_22_weeks # До 22 недель
+  - action: utter_complaint # Жалобы
+  - or:
+    - intent: stomach_ache # Боли в животе
+    - intent: nausea # Тошнота, рвота
+    - intent: headache # Головная боль
+    - intent: backache # Боль в спине
+    - intent: labor_pains # Схватки
+  - action: ???
+
+- story: accident_8_52
+  steps:
+  - checkpoint: continuation_6
+  - intent: сonscious # В сознании
+  - action: utter_injury # Травма?
+  - intent: no_injury # Травмы не было
+  - action: utter_bleeding # Кровотечение?
+  - intent: no_bleeding # Кровотечение: Нет
+  - action: utter_pregnancy # Беременность?
+  - intent: pregnancy_on # Беременность есть
+  - action: utter_gestational_age # Срок беременности
+  - intent: more_than_22_weeks # Более 22 недель
+  - action: utter_complaint # Жалобы
+  - or:
+    - intent: stomach_ache # Боли в животе
+    - intent: nausea # Тошнота, рвота
+    - intent: headache # Головная боль
+    - intent: backache # Боль в спине
+    - intent: gave_birth # Родила
+  - action: ???
+
+- story: accident_8_53
+  steps:
+  - checkpoint: continuation_6
+  - intent: сonscious # В сознании
+  - action: utter_injury # Травма?
+  - intent: no_injury # Травмы не было
+  - action: utter_bleeding # Кровотечение?
+  - intent: no_bleeding # Кровотечение: Нет
+  - action: utter_pregnancy # Беременность?
+  - intent: pregnancy_on # Беременность есть
+  - action: utter_gestational_age # Срок беременности
+  - intent: more_than_22_weeks # Более 22 недель
+  - action: utter_complaint # Жалобы
+  - or:
+    - intent: giving_birth_now # Рожает
+    - intent: labor_pains # Схватки
+  - action: utter_birth # Роды
+  - or:
+    - intent: first_birth # Первые роды
+    - intent: repeated_births # Повторные роды
   - action: ???
