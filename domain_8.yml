@@ -66,6 +66,53 @@ intents:
   - above_37.5
   - below_38
   - above_38
+  - many_on
+  - many_off
+  - falling_objects
+  - falling
+  - beat
+  - cut_veins
+  - gunshot_wound
+  - traffic_accident
+  - knife_wound
+  - other
+  - bruise
+  - separation
+  - fracture
+  - luxation
+  - neck
+  - breast
+  - stomach
+  - back
+  - hand
+  - leg
+  - several_areas
+  - head
+  - ear
+  - finger
+  - toe
+  - jaws
+  - spine
+  - edge
+  - from_mouth
+  - tooth_extraction
+  - female_genital
+  - from_nose
+  - from_anus
+  - blood_in_urine
+  - vomiting_blood
+  - hemoptysis
+  - stomach_ache
+  - nausea
+  - headache
+  - backache
+  - labor_pains
+  - gave_birth
+  - giving_birth_now
+  - first_birth
+  - repeated_births
+  - breath_on
+  - breath_off
 
 responses:
   utter_reason:
