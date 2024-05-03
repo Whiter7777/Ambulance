@@ -136,9 +136,9 @@ stories:
     - intent: backache # Боль в спине
     - intent: headache # Головная боль
     - intent: nausea # Тошнота, рвота
-    - action: utter_pregnancy # Беременность?
-    - intent: pregnancy_off # Беременности нет
-    - checkpoint: continuation_3
+  - action: utter_pregnancy # Беременность?
+  - intent: pregnancy_off # Беременности нет
+  - checkpoint: continuation_3
 
 - story: accident_8_9
   steps:

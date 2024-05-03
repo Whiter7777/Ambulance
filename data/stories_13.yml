@@ -7,6 +7,6 @@ stories:
   - intent: mining # Заминирование
   - action: utter_age # Возраст
   - or:
-      - intent: child # Ребенок до 18
-      - intent: adult # Взрослый
+    - intent: child # Ребенок до 18
+    - intent: adult # Взрослый
   - action: ???
