@@ -1,6 +1,7 @@
 version: "3.1"
 
 intents:
+  - greet
   - bleeding
   - child
   - adult

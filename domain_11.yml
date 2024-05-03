@@ -1,6 +1,7 @@
 version: "3.1"
 
 intents:
+  - greet
   - falling_objects
   - falling
   - beat

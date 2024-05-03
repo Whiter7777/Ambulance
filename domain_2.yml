@@ -1,50 +1,101 @@
 version: "3.1"
 
 intents:
-  faint
-  bite
-  burn
-  intoxication
-  bleeding
-  hanging
-  drowning
-  electric_shock
-  rape
-  falling_objects
-  falling
-  beat
-  cut_veins
-  gunshot_wound
-  injury
-  foreign_object
-  unknown
-  knife_wound
-  other
-  bruise
-  separation
-  fracture
-  neck
-  breast
-  stomach
-  back
-  hand
-  leg
-  several_areas
-  head
-  ear
-  finger
-  toe
-  jaws
-  spine
-  edge
-  nose
-  throat
-  respiratory_tract
-  rectum
-  urethra
-  vagina
-  child
-  adult
+  - greet
+  - unconscious
+  - pregnancy
+  - bite
+  - burn
+  - intoxication
+  - bleeding
+  - hanging
+  - drowning
+  - electric_shock
+  - rape
+  - falling_objects
+  - falling
+  - beat
+  - cut_veins
+  - gunshot_wound
+  - injury
+  - foreign_object
+  - unknown
+  - knife_wound
+  - other
+  - bruise
+  - separation
+  - fracture
+  - neck
+  - breast
+  - stomach
+  - back
+  - hand
+  - leg
+  - several_areas
+  - head
+  - ear
+  - finger
+  - toe
+  - jaws
+  - spine
+  - edge
+  - nose
+  - throat
+  - respiratory_tract
+  - rectum
+  - urethra
+  - vagina
+  - child
+  - adult
+  - location
+  - flat
+  - up_to_22_weeks
+  - more_than_22_weeks
+  - no_bleeding
+  - convulsions
+  - no_convulsions
+  - dog
+  - snake
+  - insect
+  - flame
+  - boiling_water
+  - chemical_agent
+  - plant
+  - electrical_burn
+  - sun
+  - head
+  - neck
+  - breast
+  - back
+  - hand
+  - leg
+  - several_areas
+  - respiratory_tract
+  - ear
+  - jaws
+  - finger
+  - toe
+  - medicament
+  - organophosphorus
+  - gas
+  - mushrooms
+  - alcohol
+  - drugs
+  - products
+  - other
+  - no_injury
+  - injury
+  - falling_objects
+  - falling
+  - beat
+  - cut_veins
+  - gunshot_wound
+  - from_mouth
+  - female_genital
+  - from_nose
+  - from_anus
+  - vomiting_blood
+
 
 responses:
 

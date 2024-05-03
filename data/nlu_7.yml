@@ -1,17 +1,24 @@
 version: "3.1"
 
 nlu:
+
+- intent: greet # Приветствие
+  examples: |
+    - Алло
+    - Добрый день
+    - Здравствуйте
+
 - intent: intoxication # Отравление
   examples: |
     - Отравление
 
 - intent: child # Ребенок до 18
-  examples:
+  examples: |
     - Ребенок
     - 12 лет
 
 - intent: adult # Взрослый
-  examples:
+  examples: |
     - Взрослый
     - 20 лет
 

@@ -1,6 +1,13 @@
 version: "3.1"
 
 nlu:
+
+- intent: greet # Приветствие
+  examples: |
+    - Алло
+    - Добрый день
+    - Здравствуйте
+
 - intent: unconscious # Без сознания
   examples: |
     - Без сознания
@@ -228,10 +235,6 @@ nlu:
   examples: |
     - Насекомое
 
-- intent: unknown # Неизвестно
-  examples: |
-    - Неизвестно
-
 - intent: flame # Пламенем
   examples: |
     - Пламенем
@@ -335,10 +338,6 @@ nlu:
 - intent: other # Прочие вещества
   examples: |
     - Прочие вещества
-
-- intent: unknown # Неизвестно
-  examples: |
-    - Неизвестно
 
 - intent: no_injury # Травмы не было
   examples: |

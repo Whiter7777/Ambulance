@@ -23,7 +23,7 @@ stories:
   - or:
     - intent: convulsions # Судороги: Да
     - intent: no_convulsions # Судороги: Нет
-    - action: ???
+  - action: ???
 
 - story: accident_2_2 # Без сознания
   steps:

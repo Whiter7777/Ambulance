@@ -39,21 +39,21 @@ nlu:
     - Дома
 
 - intent: child # Ребенок до 18
-  examples:
+  examples: |
     - Ребенок
     - 12 лет
 
 - intent: adult # Взрослый
-  examples:
+  examples: |
     - Взрослый
     - 20 лет
 
 - intent: one_victim # Несколько пострадавших: Нет
-  examples:
+  examples: |
     - Один пострадавший
 
 - intent: several_victims # Несколько пострадавших: Да
-  examples:
+  examples: |
     - Несколько пострадавших
     - Много жертв
 

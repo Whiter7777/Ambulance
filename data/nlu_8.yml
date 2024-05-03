@@ -2,6 +2,12 @@ version: "3.1"
 
 nlu:
 
+- intent: greet # Приветствие
+  examples: |
+    - Алло
+    - Добрый день
+    - Здравствуйте
+
 - intent: stomach_ache # Боли в животе
   examples: |
     - Боли в животе
@@ -120,21 +126,21 @@ nlu:
     - Дома
 
 - intent: child # Ребенок до 18
-  examples:
+  examples: |
     - Ребенок
     - 12 лет
 
 - intent: adult # Взрослый
-  examples:
+  examples: |
     - Взрослый
     - 20 лет
 
 - intent: child_up_to_three # Ребенок до 3-х месяцев
-  examples:
+  examples: |
     - Ребенок до 3-х месяцев
 
 - intent: child_up_to_year # Ребенок от 3-х месяцев до 1 года
-  examples:
+  examples: |
     - Ребенок от 3-х месяцев до 1 года
 
 - intent: up_to_22_weeks # До 22 недель
