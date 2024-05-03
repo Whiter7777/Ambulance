@@ -12,7 +12,22 @@ stories:
     - intent: child # Ребенок до 18
     - intent: adult # Взрослый
   - action: utter_consciousness # Сознание?
+  - intent: unconscious # Без сознания
+  - action: ???
+
+- story: accident_9_2
+  steps:
   - or:
-    - intent: unconscious # Без сознания
-    - intent: сonscious # В сознании
+    - intent: hypothermia # Переохлаждение
+    - intent: frostbite # Отморожение
+  - action: utter_age # Возраст пострадавшего
+  - or:
+    - intent: child # Ребенок до 18
+    - intent: adult # Взрослый
+  - action: utter_consciousness # Сознание?
+  - intent: сonscious # В сознании
+  - action: utter_sign_many # Проставлен признак много (галочка на форме)?
+  - or:
+    - intent: many_on # Проставлен признак много (галочка на форме)
+    - intent: many_off # Не проставлен признак много (галочка на форме)
   - action: ???

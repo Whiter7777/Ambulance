@@ -7,7 +7,6 @@ stories:
   - or:
     - intent: bomb_threat # Угроза взрыва
     - intent: explosive_device # Подозрение на взрывное устройство
-    - intent: explosion # Взрыв
   - action: utter_age # Возраст
   - or:
     - intent: child # Ребенок до 18
@@ -15,6 +14,20 @@ stories:
   - action: ???
 
 - story: accident_4_2
+  steps:
+  - intent: explosion # Взрыв
+  - action: utter_age # Возраст
+  - or:
+    - intent: child # Ребенок до 18
+    - intent: adult # Взрослый
+  - action: utter_number_of # Несколько пострадавших?
+  - or:
+    - intent: one_victim # Несколько пострадавших: Нет
+    - intent: several_victims # Несколько пострадавших: Да
+  - action: ???
+
+
+- story: accident_4_3
   steps:
   - or:
     - intent: firefight # Перестрелка
@@ -25,7 +38,24 @@ stories:
     - intent: child # Ребенок до 18
     - intent: adult # Взрослый
   - action: utter_conflict_continues # Конфликт продолжается?
-  - or:
-    - intent: conflict_on # Конфликт продолжается: Да
-    - intent: conflict_off # Конфликт продолжается: Нет
+  - intent: conflict_on # Конфликт продолжается: Да
   - action: ???
+
+- story: accident_4_3
+  steps:
+  - or:
+    - intent: firefight # Перестрелка
+    - intent: murder # Убийство
+    - intent: fighting # Драка
+  - action: utter_age # Возраст
+  - or:
+    - intent: child # Ребенок до 18
+    - intent: adult # Взрослый
+  - action: utter_conflict_continues # Конфликт продолжается?
+  - intent: conflict_off # Конфликт продолжается: Нет
+  - action: utter_number_of # Несколько пострадавших?
+  - or:
+    - intent: one_victim # Несколько пострадавших: Нет
+    - intent: several_victims # Несколько пострадавших: Да
+  - action: ???
+
